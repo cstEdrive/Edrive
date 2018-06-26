@@ -11,7 +11,7 @@ done
 
 if [ USREXISTS == 0 ]; then
 	sudo adduser ebox --home /home/ebox --disabled-password --gecos ''
-	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox2
+	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox
 fi
 
 sudo apt-get update -qq
