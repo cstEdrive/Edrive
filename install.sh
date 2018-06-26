@@ -10,7 +10,8 @@ for i in $(cut -d: -f1 /etc/passwd); do
 done
 
 if [ USREXISTS == 0 ]; then
-	sudo adduser ebox
+	sudo adduser ebox --home /home/ebox --disabled-password --gecos ''
+	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox2
 fi
 
 sudo apt-get update -qq
