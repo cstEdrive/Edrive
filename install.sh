@@ -14,14 +14,17 @@ if [ USREXISTS == 0 ]; then
 	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox
 fi
 
+apt-get update -qq
 
-
+apt-get install software-properties-common
 add-apt-repository ppa:webupd8team/java
 
 apt-get update -qq
+
 apt-get install -yy htop gdebi synaptic grsync bleachbit gufw
 
-apt-get install -yy libpq-dev \
+apt-get install -yy vim \
+							libpq-dev \
 							net-tools \
 							software-properties-common \
 							git \
