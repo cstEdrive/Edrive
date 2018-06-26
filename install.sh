@@ -37,9 +37,9 @@ sudo apt-get install -yy 	libpq-dev \
 
 
 
-chown -R root:root /home/ebox/svn
+chown -R root:root /home/ebox/Edrive
 
-chmod -R 755 /home/ebox/svn
+chmod -R 755 /home/ebox/Edrive
 
 
 
