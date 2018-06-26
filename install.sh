@@ -14,6 +14,10 @@ if [ USREXISTS == 0 ]; then
 	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox
 fi
 
+
+
+sudo add-apt-repository ppa:webupd8team/java
+
 sudo apt-get update -qq
 sudo apt-get install -yy htop gdebi synaptic grsync bleachbit gufw
 
