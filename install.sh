@@ -16,12 +16,12 @@ fi
 
 
 
-sudo add-apt-repository ppa:webupd8team/java
+add-apt-repository ppa:webupd8team/java
 
-sudo apt-get update -qq
-sudo apt-get install -yy htop gdebi synaptic grsync bleachbit gufw
+apt-get update -qq
+apt-get install -yy htop gdebi synaptic grsync bleachbit gufw
 
-sudo apt-get install -yy libpq-dev \
+apt-get install -yy libpq-dev \
 							net-tools \
 							software-properties-common \
 							git \
@@ -41,8 +41,39 @@ sudo apt-get install -yy libpq-dev \
 
 
 
-sudo chown -R root:root /home/ebox/Edrive/*
-sudo chmod -R 755 /home/ebox/Edrive
+chown -R root:root /home/ebox/Edrive
+chmod -R 755 /home/ebox/Edrive
+
+
+
+mkdir /usr/src/soem
+
+CURRENT_DIR=$(pwd)
+EBOX_DIR=$(pwd)/trunk/src/E-box
+
+cd $EBOX_DIR/Libs/Timer_posix_AK/
+./buildlib
+
+cd $EBOX_DIR/Libs/soem
+cp -Rf * /usr/src/soem/
+cd /usr/src/soem
+make -s clean
+make -s all
+
+cd $EBOX_DIR/Libs/soem
+make -s clean
+make -s all
+
+cd $EBOX_DIR/Libs/ec
+./buildlib
+
+cd $EBOX_DIR/Libs/Coin
+./buildlib
+
+cd $EBOX_DIR/Scripts/
+./buildgeteth
+
+ln -s /home/ebox/svn/trunk/src/E-box/Scripts/geteth /usr/bin/geteth
 
 
 echo "Modifications to be made manually"
