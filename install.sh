@@ -6,7 +6,7 @@ USREXISTS=0
 for i in $(cut -d: -f1 /etc/passwd); do
 	if [ $i == 'ebox']; then
 		USREXISTS=1
-	fi
+	fi;
 done
 
 if [ USREXISTS == 0 ]; then
