@@ -73,7 +73,7 @@ cd $EBOX_DIR/Libs/Coin
 cd $EBOX_DIR/Scripts/
 ./buildgeteth
 
-ln -s /home/ebox/svn/trunk/src/E-box/Scripts/geteth /usr/bin/geteth
+ln -s $EBOX_DIR/Scripts/geteth /usr/bin/geteth
 
 
 echo "Modifications to be made manually"
