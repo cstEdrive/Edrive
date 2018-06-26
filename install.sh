@@ -41,8 +41,8 @@ sudo apt-get install -yy libpq-dev \
 
 
 
-chown -R root:root /home/ebox/Edrive
-chmod -R 755 /home/ebox/Edrive
+sudo chown -R root:root /home/ebox/Edrive
+sudo chmod -R 755 /home/ebox/Edrive
 
 
 echo "Modifications to be made manually"
