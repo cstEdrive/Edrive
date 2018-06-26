@@ -16,7 +16,7 @@ fi
 
 apt-get update -qq
 
-apt-get install software-properties-common
+apt-get install -yy software-properties-common
 add-apt-repository ppa:webupd8team/java
 
 apt-get update -qq
