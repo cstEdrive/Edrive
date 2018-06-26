@@ -29,7 +29,7 @@ sudo apt-get install -yy libpq-dev \
 							nfs-common \
 							network-manager-pptp \
 							libgtk2.0-dev \
-							oracle-java6-installer \
+							oracle-java8-installer \
 							gedit \
 							ssh \
 							make \
@@ -41,7 +41,7 @@ sudo apt-get install -yy libpq-dev \
 
 
 
-sudo chown -R root:root /home/ebox/Edrive
+sudo chown -R root:root /home/ebox/Edrive/*
 sudo chmod -R 755 /home/ebox/Edrive
 
 
