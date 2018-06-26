@@ -1,0 +1,3 @@
+echo Start building Escope...
+gcc -g -Wall -o Escope 'Escope v1.0.c' gtk_graph.c -export-dynamic `pkg-config --cflags --libs gtk+-2.0` -lm -lincomm_client -lpthread
+echo Finished building Escope

@@ -1,0 +1,13 @@
+gcc -Wall -fPIC -fno-stack-protector -g -c -O3  -I../fungen/ -I../div/ -I../fir/ -I../incomm/ -I../tde_gate/ -I../../../Libs/ec/ -I../../../Libs/Timer_posix_AK/ libengine.c
+gcc -shared -Wl,-soname,libengine.so.1 -o libengine.so.1.0 libengine.o -lc -lm -lpthread -lfungen -lfir -lincomm_server -ldiv -ltimer_posix -lec
+
+rm -rf libengine.o
+
+mv libengine.so.1.0 /usr/lib/
+
+cd /usr/lib
+
+ldconfig -v -n
+
+ln -sf libengine.so.1.0 libengine.so
+ln -sf libengine.so.1.0 libengine.so.1

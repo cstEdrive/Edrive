@@ -1,0 +1,382 @@
+
+Warn Jos B
+   0 RTA
+  10  G+O!
+  20  H+ALT
+  30  T+IME
+  99  Q+UIT
+
+   1Title
+   2Number of values to be generated
+   3Number of values to skip each time
+   4Number of histogram intervals
+  10Generating
+  11~n~1~n~2 values, skipping each time ~3~n~4 histogram ~
+    intervals
+  12~2 values, mean=~3, std deviation= ~4
+  13   Interval     count  from total of ~2 values for ~1
+  20Lesson number
+  21   next are dummy messages for the teach system
+  22
+  23
+  24
+  25
+  26
+  27
+  28
+  29
+  30
+  31
+  32
+
+<m 31
+
+11.Epilog.
+   ------
+
+   That was all ....
+   When you want to see some lessons again, use command TL
+
+<c 0
+
+DEMO.
+
+This program is meant to demonstrate the usage of COIN. Its usage is very
+limited, better to say null. DEMO is a very, very simple tester of the
+behavior of the build-in random number generator. It lets you generate a
+series of random numbers and inspect it in the most simple manner. No real
+analysis of such a series is done.
+
+DEMO is able to generate a sequence of random numbers between 0 and 1, to
+compute mean and standard deviation and to make a simple histogram of the
+distribution.
+
+Next screen tells some more about it.
+
+
+
+
+
+
+
+>
+
+GENERATE  generates a new sequence of values.
+
+MEAN      calculates and displays mean and standard deviation of the
+          last generated sequence.
+
+HISTOGRAM makes a simple histogram of the distribution of the last
+          generated sequence.
+
+
+Both GENERATE and HISTOGRAM depend on some settings. These settings may
+be viewed with LIST and may be changed with CHANGE GENERATION or CHANGE
+HISTOGRAM. For the meaning of those settings, see help there.
+
+All other commands are for demonstration purposes only. Ask specific help
+if you want to know more about them. You may get specific help by typing
+   ? commandname
+with "commandname" any of the commands in the current menu.
+
+
+
+
+
+<c 100    CHANGE
+
+CHANGE lets you change some values. LIST shows the current settings. Ask
+specific help with
+
+   ? TITLE
+or
+   TITLE ?
+
+when your prompt is CHANGE> or with
+
+   ? CHANGE TITLE
+or
+   CHANGE ? TITLE
+or
+   CHANGE TITLE ?
+
+when your prompt is DEMO>
+
+Remark1: TITLE may be substituted by GENERATION and HISTOGRAM as well
+Remark2: of course, any of the commandnames may be abbreviated
+
+<c  1  CHANGE TITLE
+
+CHANGE TITLE lets you change the title to be written with any report.
+Acually, this title is included for demonstration purposes only.
+
+<c  2  CHANGE GENERATION
+
+CHANGE GENERATION lets you change some random number generation
+characteristics. It asks you for:
+ + number of values to use
+ + number of values to skip between values-to-be-used
+See specific help for more details
+
+>c  3
+
+CHANGE HISTOGRAM lets you change the number of intervals to be used for the
+histogram presentation. The number should be between 1 and 20 inclusive.
+
+<c  4
+
+LIST shows all values which may be set by CHANGE:
+
+   - The title (used for demonstration purposes only)
+   - The number of values to be registrated
+   - The number of random values to be skipped between two registrated values
+   - The number of histogram intervals to be used
+
+See specific help with CHANGE
+
+<c  5
+
+GENERATE generates a new sequence of random numbers. Its behavior depends on
+the settings done by CHANGE GENERATION and listed by LIST.
+
+Generation occurs implicitely by MEAN and/or HISTOGRAM when current data is
+(apparently) not valid. Any generation is reported.
+
+<c  6   MEAN
+
+MEAN computes and reports mean and standard deviation of the current sequence
+of random numbers.
+
+<c 11   TEACH
+
+TEACH display the next lesson (as far as available)
+
+<c 12   TL
+
+TL (TEACH LESSON) asks for a lesson number and displays that lesson.
+
+<c  7   HISTOGRAM
+
+HISTOGRAM makes a (very simple) histogram of the current sequence of random
+numbers. See also CHANGE HISTOGRAM and LIST.
+
+<m  1
+
+Please specify a title. It will be included in all reports.
+
+When you need a separator (space, comma or semicolon) within the text, please
+quote the whole text. When your text starts with ? or begins at the first
+position of a new line and starts with either < or >, please quote the text
+also. For quotes you may use either ' or ". Your text may never extend over
+more then one line.
+
+<m  2
+
+Enter the number of random values which will be involved in generation and
+subsequent analysis.
+
+<m  3
+
+To test random number generators, it may be significant to do not use
+subsequent generated numbers (some may seem good - assumed to generate
+normal distributed values between 0 and 1 - while they may generate
+consequently one value below and the next above 1/2).
+
+You may specify how many generated random numbers should be skipped between
+accepted (and recorded) ones during the generation process.
+
+<m  4
+
+Specify the number of intervals to be used for histogram presentation.
+The number should be between 1 and 20 inclusive.
+
+<m 21
+
+1. Getting started.
+   ---------------
+   
+This small (and almost useless) program uses COIN to communicate with you.
+I'm here to introduce you in the way you may live with COIN.
+
+You must always end any input by pressing ENTER (or RETURN).
+
+When you get a prompt like
+   DEMO>
+you may type a command or get the menu of possible commands by pressing ENTER.
+
+Please try this by pressing ENTER to see the menu.
+Now type TEACH (or T or t) and I'll be back. Don't forget to press ENTER!.
+
+<m 22
+
+2. Getting help.
+   ------------
+
+You may ask system dependent help by typing a ? (it's at the top of the menu).
+You may also append the name of a command
+
+Please try
+   
+and
+   ? M
+(don't forget to press ENTER both times).
+Type TEACH to call me again.
+
+<m 23
+
+3. Commands.
+   --------
+
+Now you have some idea about what this program may do for you. It's not much,
+but remember: it's only for demonstration purposes.
+
+Commands may have subcommands. In this case the CHANGE command is the only one
+which actually has subcommands.
+
+Please try CHANGE HISTOGRAM and press ENTER until the DEMO> prompt is back
+again.
+Type TEACH to call me again.
+
+<m 24
+
+4. Values.
+   ------
+
+You just got the line
+   Number of histogram intervals (5):
+
+The program asked you to specify a value and suggested 5. By pressing ENTER
+you accepted this suggestion. By entering a number, you should have specified
+a new value.
+As with commands, you may ask for context-dependent help by typing ?
+
+Above value is numeric. Other types are possible as well. More on this later.
+
+With CHANGE GENERATION the program asks for two values. Use ? to get help on
+their meaning.
+
+Please try CHANGE HISTOGRAM and CHANGE GENERATION several times with different
+values. Use LIST to see the effect.
+Type TEACH to call me again.
+
+<m 25
+
+5. Type ahead.
+   ----------
+
+You may type as much as you want, using one or more spaces as separator. As
+long as there is typed-ahead information available, COIN will suppress all
+prompting. However, when there's unusefull information (you made a mistake
+already?), the remainder of your type-ahead is thrown away.
+
+Please try type-ahead with combinations of CHANGE HISTOGRAM or CHANGE
+GENERATION and LIST. Make some mistakes to see the effect.
+Type TEACH to call me again.
+
+<m 26
+
+6. Special characters 1: separators and terminators.
+   --------------------
+
+COIN uses some special characters. You already have seen the ? for help and
+the space as a separator. The most important other ones are:
+1. The comma (,) is a separator for values. It may be used between values as
+   the space. However, between two adjacent commas COIN assumes a not-answered
+   value and substitutes the suggestion.
+2. The semicolon (;) is a terminator for values. It tells COIN that you don't
+   want to specify any more values. You will be back at the command-prompt
+   again, while COIN substituted the suggested values for all unspecified
+   values.
+
+Please try this with CHANGE GENERATION.
+Type TEACH to call me again.
+
+<m 27
+
+7. Text values.
+   -----------
+
+COIN differentiates between five value-types: boolean (yes/no), integer,
+real, double and text. You already have seen the integer type. Reals,
+doubles and booleans are not available in this program, but their use is
+quite straight forward. Text values are a bit more complicated as they
+suffer from some separator syndrome.
+The solution is quite simple: quote it, using either ' or ". An unquoted
+text may not start with ? (interpreted as a help request) and may not
+contain a space, comma or colon (interpreted as separators).
+
+In this demonstration program a title is included. Its only purpose is to let
+you change and inspect it. Please try.
+Type TEACH to call me again.
+
+<m 28
+
+8. Intermezzo.
+   ----------
+
+There are some more features to tell about using COIN. When it's enough for
+you or you want to see a previous lesson again, you may choose for QUIT or
+for TL. TL asks you a lesson number where I will restart. This is lesson 8.
+
+Type TEACH for the next lesson.
+
+<m 29
+
+9. Special characters 2: popping out subcommand levels.
+   --------------------
+
+While you are in an unfinished command sequence and currently at a subcommand
+level, you may back-up in two ways:
+1. Typing ! pops you up one level.
+2. Typing / pops you up to the main command level.
+As this program does not have commands nested more then one deep, you cannot
+see the difference here, but remember above two special characters.
+
+In programs which use COIN (not the best ones, not this one) it is possible
+that you seem to hang at some subcommand level without any command which pops
+you back to a higher level or lets you quit. Such a program assumes that you
+know how to pop yourself. So, at least remember the /.
+
+Please try this by entering CHANGE and popping out the submenu.
+Type TEACH for the last lesson.
+
+<m 30
+
+10.Special characters 3: command file processing and logging.
+   --------------------
+
+COIN allows you to use command file processing and logging of your keyboard
+input.
+During command file processing, your commands and values are fetched from a
+disk file rather then from your keyboard.
+Logging involves writing all your keyboard input in a disk file (and thus
+creating a possible command file; as a command file is a normal text file
+you may create it with your favorite text editor as wel
+Command file processing is activated by typing at any COIN-line
+   < filename
+The < must be the first character at the line; all other information (with
+leading spaces skipped) is assumed to be the filename. You will not be
+prompted for it.
+When COIN succeeds to open the input stream, all information from it will be
+processed as if you typed it. Upon end-of-file,  input fetching returns to
+your keyboard. When COIN fails to open the stream, it will ring the bell.
+
+Next screen tells more about logging.
+
+>
+
+Logging is activated by typing at any COIN-interpreted line
+   > filename
+The > must be the first character at the line; all other information (with
+leading spaces skipped) is assumed to be the filename. You will not be
+prompted for it.
+When COIN succeeds to open the output stream, all keyboard input will be
+written in it. When COIN fails to open the stream, it will ring the bell.
+To switch logging off, you may type
+   >
+without a filename (again, the > as the first character of the line).
+
+
+This file processing features influence the specifications of text values.
+Avoid < and > in the first position of a line always when file processing
+is not your goal

@@ -1,0 +1,609 @@
+
+COIN -- a user friendly COmmand INterpreter for interactive programs.
+may 1987, Jos Banens.
+
+
+1. Introduction.
+   ============
+
+COIN is a small library for interactive communication. You may use it
+when you design and build an interactive program. COIN is originally
+written in 1980, before the current fashion with mouses and pull-down
+menus. It works in a normal environment and it works fast and user-
+friendly, appealing both the first-time and the experienced user.
+
+This is what COIN may do for you:
+- It scans commands in different levels, accepts values and issues
+  messages with dynamically substituted values.
+- It does all necessary prompting and issuing of context-dependent help,
+  but it also allows any amount of type-ahead (and does not issue menus
+  or prompts when type-ahead information is available).
+- It does the most of the input checking (delivering usefull information
+  to your program) and never crashes on a user-made mistake.
+- It separates actual texts from your program code, so making different
+  language versions is independent of your code.
+- It has facilities for session logging and command file processing.
+- It encourages a programming style as it should be for interactive
+  programs: those programs should leave the initiative to the user and
+  respond only on his or her requests. Moreover, these kind of programs
+  are build and maintainted relatively easy as they are modular in
+  nature.
+
+COIN is available for linking with C, Pascal and Fortran code. All are
+easily adapted to any Operating System, supporting a suitable compiler.
+This documentation relates to the C-version.
+
+When you want to know more about COIN or when you consider to use it,
+please run COIN's demonstration program DEMO to see the user side of a
+simple COIN-based program. Spending ten minutes with DEMO will not only
+give you some feeling about the user's view of COIN, but also will be a
+great help by reading and the rest of this documentation.
+
+To get started, you should read chapters 2, 3 and 4 and refer to
+Appendix A in case of troubles. The other chapters discuss more
+advanced features.
+
+
+
+2. Basic concepts.
+   ==============
+
+COIN's basic concepts are commands and messages.
+
+For the user a command is a keyword or a series of keywords. For your
+program it's a non-negative integer key value. When your program asks
+for a command, it will get the key of a valid command, whatever the user
+did in the meantime.
+
+A message is a text which may be displayed to the user. In your program
+it is identified with a message number. Messages may be used to ask
+values. As with commands, COIN is responsible for supplying help,
+handling wrong responses etc. COIN handles values of type
+- boolean	: True/False or Yes/No
+- integer	: 16 bit signed integer
+- double        : extended precision real
+- text          : any sequence of characters
+
+
+3. The control file.
+   ================
+
+This section introduces the basics with regard to the control file only.
+See section 5 for more details.
+
+The control file is a normal ascii-file and consists of four sections
+(in this order):
+- the header section
+- the command section
+- the message section
+- the help section
+
+
+3.1. The header section
+     ------------------
+
+The first two lines of the control file make up the header section.
+
+Line 1 contains control information in fixed positions. It may be left
+empty as there are (reasonable) defaults:
+	columns
+	1 - 1 :	Help character (default = ?)
+	2 - 2 :	Indication if digits are allowed in commands; no with
+		zero or space, otherwise yes (default = no)
+	3 - 3 :	COIN's YES character (default = Y; Y always recognized)
+	4 - 4 :	COIN's NO  character (default = N; N always recognized)
+	5 - 8 :	Reserved
+
+Line 2 may contain any message which will be displayed when a fatal
+error occurs. It may help your users to find you, if necessary.
+
+
+3.2. The command section.
+     -------------------
+
+The command section consists of commands (inclusive their key values,
+command structure etc), one per line, and ends with an empty line.
+
+Any command line consists of:
+	columns
+	1 - 4 :	Unsigned integer key value.
+		Key values need not be unique; however, when looking for
+		one, the first match will be taken.
+	5 - 5 :	Action to be taken:
+		   '-'   : stay at this level
+		   '!'   : pop one level
+		   '/'   : pop all levels
+		   other : no special actions with regard to levels
+		Remark: '!' and '/' have the same effect as if the user
+			typed one of those; however, in this context
+			they are active only when they are at a level
+			without subcommands.
+	6 - p :	Spaces to indicate the command structure: current level
+		l is equal to this number of spaces: l = p-5.
+		If l = 0, the current line is an entry to main commands;
+		if l > 0, the line contains a subcommand of the latest
+		line with level l-1. You may not skip levels: l = 3 after
+		a line with l = 1 generates a (fatal) initiatization
+		error.
+	p+1-..:	The command name.
+		Must start with a letter. May (and possibly will) include
+		an indication about allowed abbreviation. This may be a
+		'+' or a '-'. Neither belong to the command name itself
+		and both tell what (minimal) abbreviation should be
+		recognized: the part before it. The '+' indicates: before
+		me is the minimum abbreviation, any more should match.
+		The '-' indicates: before me must be typed precisely to
+		match me, after me is only used as comment in showing
+		menus.
+		To avoid ambiguities, not all character sequences are
+		allowed for command names. In principle, only letters
+		(including the underscore) are allowed. When told so in
+		the header section, digits are allowed too, but not as
+		first character. By the way, COIN doesn't differentiate
+		between uppercase and lowercase and handles both.
+		After the '-' abbreviation indication, everything is
+		allowed (as it is never matched anyway).
+
+The command section ends with an empty line.
+
+Example:
+-------
+   0 DEMO
+ 100  C+HANGE
+   1   T+ITLE
+   2   G+ENERATION
+   3   H+ISTOGRAM
+   4  L+IST
+  11  T+EACH
+  12  TL-TEACH LESSON
+  99 Q+UIT
+
+CHANGE, LIST, TEACH, TL and QUIT are subcommands of DEMO. TITLE,
+GENERATION and HISTOGRAM are subcommands of CHANGE. All commands use
+one-letter abbreviations, except TL, which must be typed exactly as LT.
+Upper or lowercase does not matter.
+
+
+3.3. The message section.
+     -------------------
+
+The message section consists of messages (inclusive their message
+number), each starting at a separate line, and ends with an empty line.
+
+A message line consists of:
+	columns
+	1 - 4 :	Unsigned integer message number.
+		Message numbers need not be unique; however, when looking
+		for one, the first match will be taken, which actually
+		disables the usage of later ones.
+	5 -.. :	The text of the message.
+
+The message section ends with an empty line.
+
+Example:
+-------
+   1Number of nodes
+  27Name
+   4Salary
+
+
+3.4. The help section.
+     ----------------
+
+The help section consists of help texts for commands and/or messages.
+The texts are separated by lines which start with '<' or '>' in the
+first column.
+
+A line starting with '<' in column one introduces a new piece of help
+information. Next to the '<', there must be a C (or c) for command or
+M (or m) for message followed by an unsigned integer, indicating which
+command or message is addressed. The rest of the line is not used.
+Following lines contain the help information itself, up to the next line
+which starts with '<' or '>' in column 1.
+
+A line starting with '>' introduces a break in a long series of help
+lines (remember, most screens have only 24 display lines). The '>'-line
+itself is not displayed.
+
+The help section ends upon end-of-file.
+
+Example:
+-------
+      <c 5
+      This is help for command with key 5
+      < m22
+      And this is help for message 22
+      <p12 This line ends the help text for message 22
+      This line will never be displayed: its introduction (<p12) is
+      not recognized as belonging to either a command or a message.
+      <c 6
+      Here is help for command with key 6
+      >
+      And here is more ...
+
+
+4. Functions.
+   =========
+
+All COIN functions have (short) names starting with 'u1'.
+
+The functions are divided into
+- Basic functions
+- Substitute functions
+- Auxiliary functions
+- Functions for specialists
+Here only the basic functions are documented. The other functions, which
+are not necessary to get operational, may be found in sections 5 and 6.
+
+
+void	u1ini (char *name);
+	-----
+	INItialize. Must be called prior to any other call to a COIN-
+	function. The name of the COIN-control file should be in name.
+	Aborts upon any initialization error.
+
+
+void	u1fini(void);
+	------
+	FINI. May be called upon completion of your program. It closes
+	all open COIN-files.
+
+
+int	u1key (int mk)
+	-----
+	KEY. Returns the key of a subcommand of command with key mk.
+	All subcommand levels are scanned.
+
+
+int	u1ab (int m,int v);
+	----
+	Ask Boolean. Uses message m as prompt and default boolean v.
+	Returns boolean answer.
+	Remark:	0 indicates false (No), non-zero means true (Yes);
+	Remark: m may be positive or negative, while actual message
+		numbers are restricted to non-negative. When m is
+		negative, its absolute value is used and no default
+		value is accepted. Please use negative values for m
+		only with care: COIN users are common to using defaults;
+
+
+int	u1ai (int m,int v);
+	----
+	Ask Integer. Analog to u1ab.
+
+
+double	u1ad (int m,double v);
+	----
+	Ask Double. Analog to u1ab.
+
+
+void	u1at (int m,char *v,int mv);
+	----
+	Ask Text. Analog to u1ab. Default value is v. Returns (new) v
+	which will not exceed mv characters (including final '\0').
+
+
+int	u1aib (int m,int v,int v1,int v2,int s);
+	-----
+	Ask Integer Bounded. As u1ai but returned value r is restricted
+	under control of s:
+	  s < 0 :   any r	  (unrestricted)
+	  s = 0 : v1 <= r <= v2   (both limits apply)
+	  s = 1 : v1 <= r         (left side limit applies)
+	  s = 2 :       r <= v2   (right side limit applies)
+	other values for s give undefined restrictions.
+
+
+double	u1adb (int m,double v,double v1,double v2,int s);
+	-----
+	Ask Double Bounded. Analog to u1aib.
+
+
+void	u1pm (int m);
+	----
+	Put Message. Outputs message m.
+
+
+void	u1clr(void);
+	-----
+	CLeaR. Clears user input buffer. Any (possible) typed-ahead
+	information is discarded.
+
+
+int	u1more (void);
+	------
+	MORE. Returns -1 when there is more (type-ahead) information
+	available, otherwise returns 0.
+
+
+void	u1sc (int c);
+	----
+	Show Commands. Issues the subcommand-menu of command with key c.
+
+
+void	u1hlpc (int c);
+	------
+	HeLP Command. Issues the help text for command with key c.
+
+
+void	u1hlpm (int m);
+	------
+	HeLP Message. Issues the help text for message m.
+
+
+
+5. Subtitutes.
+   ==========
+
+
+5.1. Substitute concept
+     ------------------
+
+You may want to use a message like
+	~1 persons selected
+where at the place of ~1 some value must be substituted.
+You may use the placeholders ~1 .. ~9 in the text of your messages.
+Special functions will take care of the dynamic substitution.
+The ~ (tilde) is used to prefix some more special characters in the
+text of a message:
+	~B or ~b : bell
+	~N or ~n : new line
+When the last character of a message line is a ~, the next message line
+is handled as a continuation line: columns 1..4 must be spaces, all
+leading spaces are skipped.
+
+Substitutions take effect only upon the next call to u1pm or any ask-
+function (see section 4).
+
+
+5.2. Substitute functions
+     --------------------
+
+void	u1sb (int p,int v);
+	----
+	Substitute Boolean. Upon the next call to u1pm or any of the
+	ask-functions (issuing a prompt), the boolean value of v will
+	be substituted in placeholder position p.
+	Remark:	p is restricted to 1 .. 9; with illegal p the request
+		is neglected.
+	Remark: a new substitution with the same p overrides any
+		previous one.
+
+
+void	u1si (int p,int v);
+	----
+	Substitute Integer. Analog to u1sb.
+
+
+void	u1sd (int p,double v);
+	----
+	Substitute Double. Analog to u1sb.
+
+
+void	u1st (int p,char *v);
+	----
+	Substitute Text. Analog to u1sb.
+
+
+5.3. Example
+     -------
+
+Your command file contains the messages
+
+  27~Winner is ~5 with ~3 points~nCongratulations
+  28Give a name ~1
+
+Your code may be like:
+
+	char name[32] = "Adams";
+	u1st(5,"Mr. Jones"); u1si(3,330); u1pm(27);
+	u1at(28,name,32);
+	u1st(1,"which starts with a H"); u1at(28,name,32);
+
+
+6. Functions for specialists
+   =========================
+
+
+6.1. Alternative command fetching
+     ----------------------------
+
+int	u1key1 (int mk,int onec,int rpte);
+	------
+	KEY1. This is a generalized version of u1key. In principle, it
+	returns the key of a subcommand of the command with key mk, but
+	see below. The extra arguments onec and rpte control the command
+	fetching in some way:
+	onec <> 0 : fetch only one command level
+	      = 0 : fetch all command levels
+	rpte <> 0 : report errors during fetching to the calling program
+		    in stead of to the user; when there occurs an error
+		    during fetching, u1key1 returns with key = -1 (which
+		    never represents a legal key-value)
+	rpte  = 0 : possible errors are corrected before u1key1 returns
+
+	Remark: u1key(mk) is identical to u1key1(mk,0,0)
+
+
+
+6.2. Controlling memory usage
+     ------------------------
+
+void	u1memc (int *nk,int *nt);
+	------
+	MEMory, Current values. COIN uses two arrays to hold its
+	administration:
+	- int  u1k[] to hold administrative data
+	- char u1t[] to hold texts
+	Function u1ini dimensions and fills them.
+	Function u1memc returns in *nk and *nt the used lengths of u1k
+	and u1t respectively. See also the mem functions below.
+	The length of u1k will never change after u1ini. The first part
+	of u1t contains the fixed texts of the command and message
+	section from the control file. However, any text substitutes
+	will be added on top of that (of course only until they are
+	cleared by u1pm).
+	When there is not enough room during u1ini, your program aborts
+	with an initialization error. When there is not enough room for
+	substitutes, superfluous texts are not substituted.
+
+
+void	u1memm (int *nk,int *nt);
+	------
+	MEMory, Maximum values. Returns in *nk and *nt the maximum
+	lengths of u1k and u1t respectively. See above.
+
+
+void	u1mems (int nk,int nt);
+	------
+	MEMory, Set maximum values. Sets the maximum lengths of u1k
+	and u1t to nk and nt respectively. It takes only effect when
+	called before u1ini. See above.
+
+
+
+6.3. Put functions
+     -------------
+
+COIN uses a series of put-routines for its internal usage. These put
+functions, which put information into the user output buffer, may be
+used by specialist programmers as well. Besides functions for the
+standard data types, there are some additional functions available.
+
+
+void	u1pb (int v);
+	----
+	Put Boolean. Puts the boolean value of v to the user output
+	buffer.
+	Remark: actual output is postponed until the next call to u1put
+		or (implicitly) of u1get.
+
+
+void	u1pi (int v);
+	----
+	Put Integer. Analog to u1pb.
+
+
+void	u1pd (double v);
+	----
+	Put Double. Analog to u1pb.
+
+
+void	u1pt (char *v);
+	----
+	Put Text. Analog to u1pb.
+
+
+void	u1cs (void);
+	----
+	Clear Substitutions. Clears all substitution requests done by
+	any previously called substitution routine.
+
+
+void	u1put (int eol);
+	-----
+	PUT. Outputs the content of the user output buffer, clears the
+	buffer and all substitutions. The behavior of u1put is
+	controlled by eol (input):
+	 eol = 0 : do not append end-of-line (CR/LF); actual output
+		   should go now.
+	     > 0 : append end-of-line; actual output should go now
+	     < 0 : append end-of-line; actual output may be deferred
+
+
+6.4. Get functions
+     -------------
+
+COIN uses a series of get functions for its internal usage. These get
+functions, which fetch information from the user input buffer, may be
+used by specialist programmers as well. Their calls may be intermixed
+with the normal COIN-fetching routines u1key and the ask-routines. The
+get functions never request for a new user input buffer. Instead of
+that, most of them issue a return code to report about the success of
+fetching. Besides the standard data types, there are some additional
+functions available.
+
+
+int	u1gb (int *v);
+	----
+	Get Boolean. Tries to fetches a boolean value from the current
+	user input buffer into *v. Returns 1 upon succes, 0 otherwise.
+	The value of *v is unaffected when u1gb returns 0.
+	Remark:	u1gb never requests a new user input line.
+
+
+int	u1gi (int *v);
+	----
+	Get Integer. Analog to u1gb.
+
+
+int	u1gd (double *v);
+	----
+	Get Double. Analog to u1gb.
+
+
+void	u1gt (char *v,int mv);
+	----
+	Get Text. Analog to u1gb. Returned v is limited to mv characters.
+	Remark: actual input may be quoted; u1gt strips these quotes.
+	Remark: when you call u1gt when the user buffer is empty (see
+		also function u1more), you'll get an empty string v.
+
+
+int	u1gcmd (char *v,int mv);
+	------
+	Get a Command. Fetches a series of characters (possibly zero)
+	which may represent a command. The characters are upcased and
+	written in v (maximal mv characters). Function returns length
+	of v.
+
+
+void	u1back (void);
+	------
+	BACKup. Backs up last item fetched with any of the u1g functions
+	(u1gb, u1gi, u1gd, u1gt or u1gcmd). After calling u1back the
+	same piece of information in the user input buffer is available
+	again (to be fetched by the same or another u1g-routine, or
+	implicitly by u1key or one of the ask routines).
+
+
+char	u1get (void);
+	-----
+	GET. Calls u1put and fetches a new line from the user (either
+	through u1fdi when open, or through stdin otherwise) into the
+	user input buffer. Handles all COIN redirection.
+	Returns first character of the line fetched (leading spaces
+	not skipped).
+
+
+
+Appendix: errors.
+========
+
+COIN functions may encounter serious problems where further action is
+impossible. A fatal error will be generated and execution is aborted.
+A fatal error is reported as
+
+      fatal error i (w)
+
+where both i and w are integer values: i is the error number and w the
+object to which the error refers.
+
+There are four dynamic errors:
+ i =  1 : no command with key w
+      2 : no subcommands for command with key w
+      3 : no message with number w
+      4 : lowerbound > upperbound in u1aib or u1adb applied to message
+	  with number w
+
+There are also some initialization errors (w refers to the line number
+in the control file):
+ i = 10 : cannot open control file
+     11 : cannot get enough memory
+     12 : integer buffer overflows (u1k too small, u1kmax too low)
+     13 : text buffer overflows (u1t too small, u1tmax too low)
+     14 : unsigned integer in columns 1-4 expected
+     15 : invalid character in column 5 (no space, '-', '!' or '/')
+     16 : wrong command level
+     17 : wrong command name
+

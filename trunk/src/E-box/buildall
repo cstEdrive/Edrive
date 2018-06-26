@@ -1,0 +1,66 @@
+#!/bin/bash
+# Shell script version of make_all_install
+
+ROOT_UID=0     # Only users with $UID 0 have root privileges.
+E_NOTROOT=87   # Non-root exit error.
+
+
+# Script must be run as root, of course.
+if [ "$UID" -ne "$ROOT_UID" ]
+then
+  echo "Must be root to run this script."
+  exit $E_NOTROOT
+fi 
+
+
+CURRENT_EBOX_DIR=$(pwd)
+
+echo EBOX svn root dir $CURRENT_EBOX_DIR
+
+# Install libraries:
+echo %%%%%%%%%%%%% Building libraries %%%%%%%%%%%%%%%%
+
+cd Libs/Timer_posix_AK/
+chmod a+x buildlib
+./buildlib
+echo Timer_posix_AK library built, alias Timer_posix
+cd $CURRENT_EBOX_DIR
+
+echo
+echo Building SOEM
+cd Libs		% ethercat master library
+if ! [ -d /usr/src/soem ]
+then
+#    echo SOEM directory does not exist, creating
+    mkdir /usr/src/soem
+fi
+cp -Rf soem/* /usr/src/soem/
+cd /usr/src/soem
+make -s clean
+make -s all
+cd $CURRENT_EBOX_DIR
+
+cd Libs/soem
+make -s clean
+make -s all
+cd $CURRENT_EBOX_DIR
+echo SOEM built
+
+echo 
+cd Libs/ec
+./buildlib
+cd $CURRENT_EBOX_DIR
+echo eclib built
+
+echo
+cd Libs/Coin/
+./buildlib
+cd $CURRENT_EBOX_DIR
+echo Coin built
+
+echo
+cd Scripts/
+./buildgeteth
+cd $CURRENT_EBOX_DIR
+echo geteth
+

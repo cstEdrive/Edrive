@@ -1,0 +1,1 @@
+gcc -Wall -g -I/usr/local/include -I../../../Libs/Timer_posix_AK/ -L/usr/lib  -o test03 test03.c -lfftw3 -lm -ltimer_posix -lfftp

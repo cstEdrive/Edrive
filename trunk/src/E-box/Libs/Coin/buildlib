@@ -1,0 +1,12 @@
+gcc -fno-stack-protector -fPIC -c libu1.c
+gcc -shared -Wl,-soname,libu1.so.1 -o libu1.so.1.0 libu1.o -lc -lm
+
+mv libu1.so.1.0 /usr/lib/.
+
+cd /usr/lib
+ldconfig -v -n
+ln -sf libu1.so.1.0 libu1.so
+ln -sf libu1.so.1.0 libu1.so.1
+
+#cd /home/mmolengr/TUeDACS_usb/Coin
+

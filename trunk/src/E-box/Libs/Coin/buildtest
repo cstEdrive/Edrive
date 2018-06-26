@@ -1,0 +1,8 @@
+gcc -o rtactl rtactl.c -L/usr/lib -lu1
+
+
+
+
+
+
+

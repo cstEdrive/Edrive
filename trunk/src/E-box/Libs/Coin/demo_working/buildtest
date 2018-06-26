@@ -1,0 +1,8 @@
+gcc -o demo demo.c -L/usr/lib -lu1
+
+
+
+
+
+
+

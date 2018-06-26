@@ -1,0 +1,2 @@
+gcc -o test07 test07.c -lec
+

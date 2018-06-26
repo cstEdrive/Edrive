@@ -1,0 +1,54 @@
+ 1
+Mis ...
+   0 MAIN
+   1  A
+  11   AA
+  12   AB
+  13   AC
+   2  B
+  21   BA
+  22-  BB
+ 221    BBA
+ 222    BBB
+ 227/   B+ACK_TO_MAIN
+ 228!   R+ETURN
+   9    Q+UIT
+  23   BC
+   3  C
+   8  D+UMP
+   9  Q+UIT
+
+   1Key = ~1
+
+<c0
+help for MAIN
+<c1
+help for A
+<c2
+help for B
+<c3
+help for C
+<c21
+help for BA
+<c22
+help for BB
+<c23
+help for BC
+<c221
+help for BBA
+<c222
+help for BBB
+<c223
+help for BBC
+<c227
+help for BACK
+<c228
+help for RETURN
+<c8
+help for DUMP
+>y
+and more ...
+<c9
+help for all (?) QUIT's
+<m1
+help for m1

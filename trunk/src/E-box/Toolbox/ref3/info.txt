@@ -1,0 +1,8 @@
+Ref3 - Third degree reference generator
+
+File ref3.dll was precompiled for use with Matlab6p1.
+Recompile with "mex ref3.c" for other Matlab versions.
+
+See c:\ref3test\test.mdl for an example of how to use ref3.
+
+Mail comments to M.J.G.v.d.Molengraft@tue.nl

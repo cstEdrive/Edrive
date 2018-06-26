@@ -1,0 +1,2 @@
+gcc -o test_root test_root.c
+

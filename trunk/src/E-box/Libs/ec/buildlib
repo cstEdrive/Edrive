@@ -1,0 +1,23 @@
+#define ethercat* object files:
+echo $(pwd)
+#ethercat_obj =  ../soem/ethercatbase.o \
+#                ../soem/ethercatcoe.o \
+#                ../soem/ethercatconfig.o \
+#                ../soem/ethercatdc.o \
+#                ../soem/ethercatfoe.o \
+#                ../soem/ethercatmain.o \
+#                ../soem/ethercatprint.o \
+#                ../soem/ethercatsoe.o
+
+
+    gcc -Wall -fno-stack-protector -O2 -g -fPIC -c ec.c
+
+#gcc -shared -Wl,-soname,libec.so.1 -o libec.so.1.0 ec.o $(ethercat_obj) ../soem/nicdrv.o -lc -pthread
+gcc -shared -Wl,-soname,libec.so.1 -o libec.so.1.0 ec.o ../soem/ethercat*.o  ../soem/nicdrv.o -lc -pthread
+
+mv libec.so.1.0 /usr/lib/.
+
+cd /usr/lib
+ldconfig -v -n
+ln -sf libec.so.1.0 libec.so
+ln -sf libec.so.1.0 libec.so.1

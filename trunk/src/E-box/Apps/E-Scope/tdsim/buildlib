@@ -1,0 +1,10 @@
+gcc -fPIC -c libtdqad.c -I../td -I../div -I../../Timer_xenomai
+gcc -shared -Wl,-soname,libtdqad.so.1 -o libtdqad.so.1.0 libtdqad.o -lc -lm
+mv libtdqad.so.1.0 /usr/lib/.
+echo mv libtdqad.so.1.0 /home/mmolengr/simexp/loopback
+
+cd /usr/lib
+echo cd /home/mmolengr/simexp/loopback
+ldconfig -v -n
+ln -sf libtdqad.so.1.0 libtdqad.so
+ln -sf libtdqad.so.1.0 libtdqad.so.1

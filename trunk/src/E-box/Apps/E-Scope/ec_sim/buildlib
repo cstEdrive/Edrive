@@ -1,0 +1,10 @@
+gcc -fno-stack-protector -O2 -g -fPIC -c ec_sim.c
+
+gcc -shared -Wl,-soname,libec.so.1 -o libec.so.1.0 ec_sim.o ../../../Libs/soem/ethercat*.o ../../../Libs/soem/nicdrv.o -lc -lpthread -lm
+
+mv libec.so.1.0 /usr/lib/.
+
+cd /usr/lib
+ldconfig -v -n
+ln -sf libec.so.1.0 libec.so
+ln -sf libec.so.1.0 libec.so.1

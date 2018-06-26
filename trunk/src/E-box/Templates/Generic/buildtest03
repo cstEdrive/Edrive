@@ -1,0 +1,2 @@
+gcc -o test03 test03.c -lec
+

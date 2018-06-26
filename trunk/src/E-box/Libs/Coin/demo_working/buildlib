@@ -1,0 +1,11 @@
+gcc -fPIC -c libu1.c
+ld -shared -soname libu1.so.1 -o libu1.so.1.0 -lc libu1.o -lm
+mv libu1.so.1.0 /usr/lib/.
+
+cd /usr/lib
+ldconfig -v -n
+ln -sf libu1.so.1.0 libu1.so
+ln -sf libu1.so.1.0 libu1.so.1
+
+cd /home/mmolengr/TUeDACS/Coin
+

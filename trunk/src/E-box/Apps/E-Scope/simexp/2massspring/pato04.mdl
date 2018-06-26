@@ -1,0 +1,1624 @@
+Model {
+  Name			  "pato04"
+  Version		  4.00
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Jan 31 12:33:46 2001"
+  Creator		  "root"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "root"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Sat Mar 12 22:28:58 2005"
+  ModelVersionFormat	  "1.%<AutoIncrement:237>"
+  ConfigurationManager	  "none"
+  SimParamPage		  "Solver"
+  StartTime		  "0.0"
+  StopTime		  "3600"
+  SolverMode		  "Auto"
+  Solver		  "ode1"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "1/4096"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  LimitDataPoints	  on
+  MaxDataPoints		  "4000*3600"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  SingleTaskRateTransMsg  "none"
+  MultiTaskRateTransMsg	  "error"
+  IntegerOverflowMsg	  "warning"
+  CheckForMatrixSingularity "none"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  LinearizationMsg	  "none"
+  VectorMatrixConversionMsg "none"
+  SfunCompatibilityCheckMsg "none"
+  BlockPriorityViolationMsg "warning"
+  ArrayBoundsChecking	  "none"
+  ConsistencyChecking	  "none"
+  ZeroCross		  on
+  Profile		  off
+  SimulationMode	  "external"
+  RTWSystemTargetFile	  "wintarget.tlc"
+  RTWOptions		  " -aEnforceIntegerDowncast=1 -aExtMode=1 -aFoldNonRo"
+"lledExpr=1 -aForceParamTrailComments=0 -aGenerateComments=1 -aIgnoreCustomSto"
+"rageClasses=1 -aIncHierarchyInIds=0 -aInlineInvariantSignals=0 -aInlineParame"
+"ters=0 -aLocalBlockOutputs=1 -aLogVarNameModifier=\"rt_\" -aRTWVerbose=1 -aRo"
+"llThreshold=5 -aShowEliminatedStatements=1"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "wt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "1"
+  ExtModeTrigDuration	  3910
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  ParameterPooling	  on
+  BlockReductionOpt	  off
+  RTWExpressionDepthLimit 5
+  BooleanDataType	  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "pato04"
+    Location		    [68, 75, 997, 489]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Display
+      Name		      "Actual time in s"
+      Ports		      [1]
+      Position		      [85, 355, 175, 385]
+      Format		      "short"
+      Decimation	      "1"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      Position		      [30, 360, 50, 380]
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Controller"
+      Ports		      [1, 1]
+      Position		      [360, 200, 460, 250]
+      BackgroundColor	      "lightBlue"
+      FontSize		      14
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Controller"
+      MaskDescription	      "The controller consists of three filters: a Kp/"
+"Kv, a notch and a roll-off filter.\nYou can edit the parameters below."
+      MaskPromptString	      "Kp|Kv|Notch zeros [Hz]|Notch damping zeros [-]|"
+"Notch poles [Hz]|Notch damping poles [-]|Roll-off poles [Hz]|Roll-off damping"
+" poles [-]"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on"
+      MaskVariables	      "Kp=@1;Kv=@2;notch_zeros=@3;notch_damping_zeros="
+"@4;notch_poles=@5;notch_damping_poles=@6;roll_off_poles=@7;roll_off_damping_p"
+"oles=@8;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "2|.01|300|0.1|300|0.1|300|0.2"
+      MaskVariableAliases     ",,,,,,,"
+      System {
+	Name			"Controller"
+	Location		[108, 149, 942, 602]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"93"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Input"
+	  Position		  [35, 35, 55, 55]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Dct2lowpass"
+	  Ports			  [1, 1]
+	  Position		  [440, 24, 620, 66]
+	  ForegroundColor	  "gray"
+	  BackgroundColor	  "lightBlue"
+	  FontName		  "TUE Meta Wide"
+	  FontSize		  16
+	  FunctionName		  "dlowpass2"
+	  Parameters		  "[f_den b_den 0.001]"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	  MaskType		  "dctools"
+	  MaskDescription	  "This block implements a discrete time 2nd o"
+"rder lowpass filter."
+	  MaskPromptString	  "Pole [Hz]|Damping pole [-]"
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskToolTipString	  "on,on"
+	  MaskVariables		  "f_den=@1;b_den=@2;"
+	  MaskDisplay		  "disp('DCT 2nd order lowpass')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "roll_off_poles|roll_off_damping_poles"
+	  MaskVariableAliases	  ","
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Dctnotch"
+	  Ports			  [1, 1]
+	  Position		  [295, 24, 390, 66]
+	  ForegroundColor	  "gray"
+	  BackgroundColor	  "lightBlue"
+	  FontName		  "TUE Meta Wide"
+	  FontSize		  16
+	  FunctionName		  "dnotch"
+	  Parameters		  "[f_num b_num f_den b_den 0.001]"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	  MaskType		  "dctools"
+	  MaskDescription	  "This block implements a dicrete time 2nd or"
+"der notch filter."
+	  MaskPromptString	  "Zero [Hz]|Damping zero [-]|Pole [Hz]|Dampin"
+"g pole [-]"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on"
+	  MaskVariables		  "f_num=@1;b_num=@2;f_den=@3;b_den=@4;"
+	  MaskDisplay		  "disp('DCT notch')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "notch_zeros|notch_damping_zeros|notch_poles"
+"|notch_damping_poles"
+	  MaskVariableAliases	  ",,,"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "Dctpd"
+	  Ports			  [1, 1]
+	  Position		  [155, 24, 240, 66]
+	  ForegroundColor	  "gray"
+	  BackgroundColor	  "lightBlue"
+	  FontName		  "TUE Meta Wide"
+	  FontSize		  16
+	  FunctionName		  "dpd"
+	  Parameters		  "[kp kv 0.001]"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	  MaskType		  "dctools"
+	  MaskDescription	  "This block implements a discrete time pd fi"
+"lter."
+	  MaskPromptString	  "Kp|Kv"
+	  MaskStyleString	  "edit,edit"
+	  MaskTunableValueString  "on,on"
+	  MaskCallbackString	  "|"
+	  MaskEnableString	  "on,on"
+	  MaskVisibilityString	  "on,on"
+	  MaskToolTipString	  "on,on"
+	  MaskVariables		  "kp=@1;kv=@2;"
+	  MaskDisplay		  "disp('DCT pd')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "Kp|Kv"
+	  MaskVariableAliases	  ","
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [100, 35, 120, 55]
+	  Gain			  "-1"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Output"
+	  Position		  [650, 35, 670, 55]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Dct2lowpass"
+	  SrcPort		  1
+	  DstBlock		  "Output"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Dctpd"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Input"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Dctpd"
+	  SrcPort		  1
+	  DstBlock		  "Dctnotch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Dctnotch"
+	  SrcPort		  1
+	  DstBlock		  "Dct2lowpass"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Kfa"
+      Position		      [435, 20, 465, 50]
+      Gain		      "0"
+      Multiplication	      "Element-wise(K.*u)"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Kfc"
+      Position		      [435, 125, 465, 155]
+      Gain		      "0"
+      Multiplication	      "Element-wise(K.*u)"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Kfv"
+      Position		      [435, 65, 465, 95]
+      Gain		      "0"
+      Multiplication	      "Element-wise(K.*u)"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      RandomNumber
+      Name		      "Noise"
+      Position		      [490, 250, 520, 280]
+      Mean		      "0"
+      Variance		      "0.2"
+      Seed		      "0"
+      SampleTime	      "0"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Pato setup"
+      Ports		      [1, 2]
+      Position		      [630, 169, 785, 251]
+      BackgroundColor	      "lightBlue"
+      FontSize		      14
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Encoders"
+      MaskDescription	      "Inc encoder positions 1-2 [rad] (see connector "
+"pannel).\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Pato setup"
+	Location		[173, 166, 966, 498]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"107"
+	Block {
+	  BlockType		  Inport
+	  Name			  "DAC0 (motor) [V]"
+	  Position		  [75, 83, 105, 97]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [75, 110, 105, 140]
+	  Value			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Encoder 1"
+	  Position		  [595, 125, 625, 155]
+	  Gain			  "-2*pi/(500*4)"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Encoder 2"
+	  Position		  [655, 155, 685, 185]
+	  Gain			  "2*pi/(500*4)"
+	  Multiplication	  "Element-wise(K.*u)"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem"
+	  Ports			  [0, 10]
+	  Position		  [380, 67, 570, 363]
+	  ForegroundColor	  "gray"
+	  BackgroundColor	  "lightBlue"
+	  ShowName		  off
+	  FontName		  "Arial"
+	  FontSize		  14
+	  FontWeight		  "bold"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskType		  "TUeDACS/1 QAD/AQI Inports block"
+	  MaskDescription	  "This block models the TUeDACS/1 QAD/AQI inp"
+"orts.\n\nQAD:\n- front panel channels are named 0/1 instead of 1/2\n- ADC inp"
+"ut range is fixed at +/- 2.5 V\n\nAQI:\n- scalable ADC input range\n"
+	  MaskHelp		  "This block models the TUeDACS/1 QAD/AQI inp"
+"orts."
+	  MaskPromptString	  "QAD/AQI identifier|Use ADC channel 1|ADC ra"
+"nge select channel 1 (AQI only)|Use ADC channel 2|ADC range select channel 2 "
+"(AQI only)|Use ENC channel 1|ENC function select channel 1|Use ENC channel 2|"
+"ENC function select channel 2|Use DI channels"
+	  MaskStyleString	  "popup(link0|link1),checkbox,popup(+/- 10 V|"
+"+/- 5 V|+/- 2 V|+/- 1 V|+/- 0.5 V|+/- 0.2 V|+/- 0.1 V),checkbox,popup(+/- 10 "
+"V|+/- 5 V|+/- 2 V|+/- 1 V|+/- 0.5 V|+/- 0.2 V|+/- 0.1 V),checkbox,popup(Quadr"
+"ature single ended|Quadrature differential (AQI only)|Event counter),checkbox"
+",popup(Quadrature single ended|Quadrature differential (AQI only)|Event count"
+"er),checkbox"
+	  MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on"
+	  MaskCallbackString	  "|||||||||"
+	  MaskEnableString	  "on,on,on,on,on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on,on,on,on,on,on"
+	  MaskVariables		  "ilink=@1;adc_active_ch1=@2;adc_range_select"
+"_ch1=@3;adc_active_ch2=@4;adc_range_select_ch2=@5;enc_active_ch1=@6;enc_funct"
+"_select_ch1=@7;enc_active_ch2=@8;enc_funct_select_ch2=@9;dio_active=@10;"
+	  MaskDisplay		  "disp('TUeDACS/1 QAD/AQI');\ndisp('\\n\\nInp"
+"orts block');\n\n"
+	  MaskIconFrame		  off
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "link0|off|+/- 10 V|off|+/- 10 V|on|Quadratu"
+"re single ended|on|Quadrature single ended|off"
+	  MaskVariableAliases	  ",,,,,,,,,"
+	  System {
+	    Name		    "Subsystem"
+	    Location		    [158, 168, 837, 529]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      Ports		      [1, 10]
+	      Position		      [270, 23, 285, 317]
+	      BackgroundColor	      "black"
+	      ShowName		      off
+	      Outputs		      "10"
+	      BusSelectionMode	      off
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "TUeDACS/1\ninterface block"
+	      Ports		      [0, 1]
+	      Position		      [185, 155, 245, 185]
+	      FunctionName	      "td_inports"
+	      Parameters	      "ilink, adc_active_ch1, adc_active_ch2, "
+"enc_active_ch1, enc_active_ch2, dio_active, adc_range_select_ch1, adc_range_s"
+"elect_ch2, enc_funct_select_ch1, enc_funct_select_ch2"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "adc 1"
+	      Position		      [320, 28, 350, 42]
+	      ForegroundColor	      "gray"
+	      Port		      "1"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "adc 2"
+	      Position		      [320, 58, 350, 72]
+	      ForegroundColor	      "gray"
+	      Port		      "2"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "enc 1"
+	      Position		      [320, 88, 350, 102]
+	      ForegroundColor	      "gray"
+	      Port		      "3"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "enc 2"
+	      Position		      [320, 118, 350, 132]
+	      ForegroundColor	      "gray"
+	      Port		      "4"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ref 1"
+	      Position		      [320, 148, 350, 162]
+	      ForegroundColor	      "gray"
+	      Port		      "5"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "ref 2"
+	      Position		      [320, 178, 350, 192]
+	      ForegroundColor	      "gray"
+	      Port		      "6"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "bit 0"
+	      Position		      [320, 208, 350, 222]
+	      ForegroundColor	      "gray"
+	      Port		      "7"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "bit 1"
+	      Position		      [320, 238, 350, 252]
+	      ForegroundColor	      "gray"
+	      Port		      "8"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "bit 2"
+	      Position		      [320, 268, 350, 282]
+	      ForegroundColor	      "gray"
+	      Port		      "9"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "bit 3"
+	      Position		      [320, 298, 350, 312]
+	      ForegroundColor	      "gray"
+	      Port		      "10"
+	      OutputWhenDisabled      "held"
+	      InitialOutput	      "[]"
+	    }
+	    Line {
+	      SrcBlock		      "TUeDACS/1\ninterface block"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "adc 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "adc 2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "enc 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "enc 2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      7
+	      DstBlock		      "bit 0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      8
+	      DstBlock		      "bit 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      9
+	      DstBlock		      "bit 2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      10
+	      DstBlock		      "bit 3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      5
+	      DstBlock		      "ref 1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      6
+	      DstBlock		      "ref 2"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem1"
+	  Ports			  [8]
+	  Position		  [180, 64, 370, 361]
+	  ForegroundColor	  "gray"
+	  BackgroundColor	  "lightBlue"
+	  ShowName		  off
+	  FontName		  "Arial"
+	  FontSize		  14
+	  FontWeight		  "bold"
+	  ShowPortLabels	  on
+	  TreatAsAtomicUnit	  off
+	  RTWSystemCode		  "Auto"
+	  RTWFcnNameOpts	  "Auto"
+	  RTWFileNameOpts	  "Auto"
+	  MaskType		  "TUeDACS/1 QAD/AQI Outports block"
+	  MaskDescription	  "This block models the TUeDACS/1 QAD/AQI out"
+"ports.\n\nQAD:\n- front panel channels are named 0/1 instead of 1/2\n- DAC ou"
+"tput range is +/- 2.5 V\n\nAQI:\n- DAC output range is +/- 5V.\n- scalable AD"
+"C input range\n"
+	  MaskHelp		  "This block models the TUeDACS/1 QAD/AQI out"
+"ports."
+	  MaskPromptString	  "QAD/AQI identifier|Use DAC channel 1|DAC ho"
+"ld order select channel 1|Use DAC channel 2|DAC hold order select channel 2|U"
+"se DO channels|Use PWM channel 1 (AQI only)|PWM function select channel 1|PWM"
+" frequency select channel 1|Use PWM channel 2 (AQI only)|PWM function select "
+"channel 2|PWM frequency select channel 2"
+	  MaskStyleString	  "popup(link0|link1),checkbox,popup(Zero orde"
+"r (SW)|First order (SW)|Second order (SW)|Third order (SW)),checkbox,popup(Ze"
+"ro order (SW)|First order (SW)|Second order (SW)|Third order (SW)),checkbox,c"
+"heckbox,popup(Locked anti-phase PWM (0 to 1)|Sign/magnitude PWM (-1 to 1)),po"
+"pup(1 Hz|10 Hz|50 Hz|100 Hz|1 kHz|10 kHz|100 kHz|1 MHz),checkbox,popup(Locked"
+" anti-phase PWM (0 to 1)|Sign/magnitude PWM (-1 to 1)),popup(1 Hz|10 Hz|50 Hz"
+"|100 Hz|1 kHz|10 kHz|100 kHz|1 MHz)"
+	  MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on"
+	  MaskCallbackString	  "|||||||||||"
+	  MaskEnableString	  "on,on,on,on,on,on,on,on,on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on,on,on,on,on,on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on,on,on,on,on,on,on,on,on"
+	  MaskVariables		  "ilink=@1;dac_active_ch1=@2;dac_hold_order_s"
+"elect_ch1=@3;dac_active_ch2=@4;dac_hold_order_select_ch2=@5;dio_active=@6;pwm"
+"_active_ch1=@7;pwm_funct_select_ch1=@8;pwm_freq_select_ch1=@9;pwm_active_ch2="
+"@10;pwm_funct_select_ch2=@11;pwm_freq_select_ch2=@12;"
+	  MaskDisplay		  "disp('TUeDACS/1 QAD/AQI');\ndisp('\\n\\nOut"
+"ports block');\n\n"
+	  MaskIconFrame		  off
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "link0|on|Zero order (SW)|off|Zero order (SW"
+")|off|off|Locked anti-phase PWM (0 to 1)|10 kHz|off|Locked anti-phase PWM (0 "
+"to 1)|10 kHz"
+	  MaskVariableAliases	  ",,,,,,,,,,,"
+	  System {
+	    Name		    "Subsystem1"
+	    Location		    [158, 168, 837, 529]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dac 1"
+	      Position		      [85, 23, 115, 37]
+	      ForegroundColor	      "gray"
+	      Port		      "1"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dac 2"
+	      Position		      [85, 63, 115, 77]
+	      ForegroundColor	      "gray"
+	      Port		      "2"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "bit 4"
+	      Position		      [85, 103, 115, 117]
+	      ForegroundColor	      "gray"
+	      Port		      "3"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "bit 5"
+	      Position		      [85, 143, 115, 157]
+	      ForegroundColor	      "gray"
+	      Port		      "4"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "bit 6"
+	      Position		      [85, 183, 115, 197]
+	      ForegroundColor	      "gray"
+	      Port		      "5"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "bit 7"
+	      Position		      [85, 223, 115, 237]
+	      ForegroundColor	      "gray"
+	      Port		      "6"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pwm 1"
+	      Position		      [85, 263, 115, 277]
+	      ForegroundColor	      "gray"
+	      Port		      "7"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "pwm 2"
+	      Position		      [85, 303, 115, 317]
+	      ForegroundColor	      "gray"
+	      Port		      "8"
+	      LatchInput	      off
+	      Interpolate	      on
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      Ports		      [8, 1]
+	      Position		      [145, 12, 160, 328]
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "TUeDACS/1\ninterface block"
+	      Ports		      [1]
+	      Position		      [185, 155, 245, 185]
+	      FunctionName	      "td_outports"
+	      Parameters	      "ilink, dac_active_ch1, dac_hold_order_s"
+"elect_ch1, dac_active_ch2, dac_hold_order_select_ch2, dio_active, pwm_active_"
+"ch1, pwm_active_ch2, pwm_funct_select_ch1, pwm_funct_select_ch2, pwm_freq_sel"
+"ect_ch1, pwm_freq_select_ch2"
+	      PortCounts	      "[]"
+	      SFunctionModules	      "''"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "TUeDACS/1\ninterface block"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "dac 1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "dac 2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "bit 4"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "bit 5"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "bit 6"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "bit 7"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "pwm 2"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "pwm 1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ENC0 [rad]"
+	  Position		  [705, 133, 735, 147]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "ENC1 [rad]"
+	  Position		  [770, 163, 800, 177]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Subsystem"
+	  SrcPort		  3
+	  DstBlock		  "Encoder 1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Encoder 1"
+	  SrcPort		  1
+	  DstBlock		  "ENC0 [rad]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Encoder 2"
+	  SrcPort		  1
+	  DstBlock		  "ENC1 [rad]"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "DAC0 (motor) [V]"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Subsystem"
+	  SrcPort		  4
+	  DstBlock		  "Encoder 2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "RTScope"
+      Ports		      [8, 4]
+      Position		      [715, 28, 915, 147]
+      OpenFcn		      "rtscope"
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "RTScope"
+      MaskDisplay	      "image(imread('rtscope2.jpg'))"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"RTScope"
+	Location		[325, 135, 766, 391]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [15, 33, 45, 47]
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  Position		  [15, 48, 45, 62]
+	  Port			  "2"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In3"
+	  Position		  [15, 63, 45, 77]
+	  Port			  "3"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In4"
+	  Position		  [15, 78, 45, 92]
+	  Port			  "4"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In5"
+	  Position		  [15, 93, 45, 107]
+	  Port			  "5"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In6"
+	  Position		  [15, 108, 45, 122]
+	  Port			  "6"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In7"
+	  Position		  [15, 123, 45, 137]
+	  Port			  "7"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In8"
+	  Position		  [15, 138, 45, 152]
+	  Port			  "8"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 4]
+	  Position		  [230, 38, 245, 152]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "4"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [8, 1]
+	  Position		  [90, 28, 105, 157]
+	  ShowName		  off
+	  Inputs		  "8"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "RTScope Interface Block"
+	  Ports			  [1, 1]
+	  Position		  [130, 39, 205, 151]
+	  OpenFcn		  "rtscope"
+	  FunctionName		  "sf_qadscope"
+	  Parameters		  "4000"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [295, 43, 325, 57]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  Position		  [295, 73, 325, 87]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out3"
+	  Position		  [295, 103, 325, 117]
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out4"
+	  Position		  [295, 133, 325, 147]
+	  Port			  "4"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "In8"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "In7"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "In6"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "In5"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "In4"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "In3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Out4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Out3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "Out2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "RTScope Interface Block"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "RTScope Interface Block"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Ref acc scaling "
+      Position		      [260, 155, 290, 185]
+      Gain		      "8e-5"
+      Multiplication	      "Element-wise(K.*u)"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref power"
+      Ports		      [0, 1]
+      Position		      [45, 186, 85, 234]
+      BackgroundColor	      "red"
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "On/Off Switch"
+      MaskPromptString	      "Switch"
+      MaskStyleString	      "popup(On|Off)"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskVariables	      "stat=@1;"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Off"
+      System {
+	Name			"Ref power"
+	Location		[118, 273, 393, 547]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Constant
+	  Name			  "Start setpoint"
+	  Position		  [25, 25, 55, 55]
+	  Value			  "stat"
+	  VectorParams1D	  on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "On/Off"
+	  Position		  [80, 33, 110, 47]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Start setpoint"
+	  SrcPort		  1
+	  DstBlock		  "On/Off"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Signum
+      Name		      "Sign"
+      Position		      [375, 125, 405, 155]
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Subsystem"
+      Ports		      [1, 3]
+      Position		      [110, 184, 225, 236]
+      ForegroundColor	      "gray"
+      BackgroundColor	      "yellow"
+      ShowName		      off
+      OpenFcn		      "global ref_part; cb_axes 1"
+      FontSize		      12
+      FontWeight	      "bold"
+      ShowPortLabels	      on
+      TreatAsAtomicUnit	      off
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      MaskType		      "Ref3"
+      MaskDisplay	      "disp('Ref3');\n"
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Subsystem"
+	Location		[482, 104, 820, 224]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "start"
+	  Position		  [35, 38, 65, 52]
+	  ForegroundColor	  "darkGreen"
+	  Port			  "1"
+	  LatchInput		  off
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  Ports			  [1, 3]
+	  Position		  [195, 26, 200, 64]
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "3"
+	  BusSelectionMode	  off
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  "S-Function"
+	  Ports			  [1, 1]
+	  Position		  [110, 24, 160, 66]
+	  ShowName		  off
+	  OpenFcn		  "global ref_part; r3g_main"
+	  FunctionName		  "ref3b"
+	  Parameters		  "ref_part"
+	  PortCounts		  "[]"
+	  SFunctionModules	  "''"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "acc"
+	  Position		  [225, 13, 255, 27]
+	  ForegroundColor	  "darkGreen"
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "vel"
+	  Position		  [265, 38, 295, 52]
+	  ForegroundColor	  "darkGreen"
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pos"
+	  Position		  [225, 63, 255, 77]
+	  ForegroundColor	  "darkGreen"
+	  Port			  "3"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "S-Function"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "acc"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  DstBlock		  "vel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [5, 0]
+	  DstBlock		  "pos"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "start"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1]
+      Position		      [300, 215, 320, 235]
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      Description	      "sumff"
+      Ports		      [5, 1]
+      Position		      [555, 174, 580, 246]
+      ShowName		      off
+      IconShape		      "rectangular"
+      Inputs		      "|+++++"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "w"
+      Position		      [650, 13, 680, 27]
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "u"
+      Position		      [650, 68, 680, 82]
+      Port		      "2"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "e"
+      Position		      [650, 103, 680, 117]
+      Port		      "3"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Line {
+      SrcBlock		      "Ref acc scaling "
+      SrcPort		      1
+      Points		      [10, 0; 0, -135]
+      DstBlock		      "Kfa"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [0, 0; 15, 0]
+      Branch {
+	DstBlock		"Controller"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -115]
+	DstBlock		"e"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Controller"
+      SrcPort		      1
+      DstBlock		      "Sum2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Sign"
+      SrcPort		      1
+      DstBlock		      "Kfc"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Kfc"
+      SrcPort		      1
+      Points		      [0, 75]
+      DstBlock		      "Sum2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Kfv"
+      SrcPort		      1
+      Points		      [10, 0; 0, 125]
+      DstBlock		      "Sum2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Kfa"
+      SrcPort		      1
+      Points		      [20, 0; 0, 160]
+      DstBlock		      "Sum2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Ref power"
+      SrcPort		      1
+      DstBlock		      "Subsystem"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum2"
+      SrcPort		      1
+      Points		      [0, 0; 10, 0]
+      Branch {
+	DstBlock		"Pato setup"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -135; 30, 0]
+	Branch {
+	  DstBlock		  "u"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -25]
+	  DstBlock		  "RTScope"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Pato setup"
+      SrcPort		      1
+      Points		      [35, 0; 0, 175; -515, 0]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Noise"
+      SrcPort		      1
+      Points		      [15, 0; 0, -30]
+      Branch {
+	DstBlock		"Sum2"
+	DstPort			5
+      }
+      Branch {
+	Points			[0, -215; 85, 0]
+	Branch {
+	  DstBlock		  "w"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 15]
+	  DstBlock		  "RTScope"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Subsystem"
+      SrcPort		      1
+      Points		      [0, -25]
+      DstBlock		      "Ref acc scaling "
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem"
+      SrcPort		      3
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem"
+      SrcPort		      2
+      Points		      [95, 0; 0, -70]
+      Branch {
+	Points			[0, -60]
+	DstBlock		"Kfv"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Sign"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Actual time in s"
+      DstPort		      1
+    }
+  }
+}

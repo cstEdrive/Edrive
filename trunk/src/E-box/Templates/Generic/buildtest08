@@ -1,0 +1,2 @@
+gcc -o test08 test08.c -lec
+

@@ -1,0 +1,8 @@
+De mexglx-file ref3.mexglx en ref3switch.mexglx staan in /usr/local/matlab6p1/toolbox/local
+De c-files ref3.c en ref3switch.c voor rtw staan in /usr/local/matlab6p1/rtw/c/src
+De ref3ma files staan in /usr/local/matlab6p1/toolbox/ref3ma
+'ref3ma' toegevoegd via addpath in /usr/local/matlab6p1/toolbox/local/matlabrc.m
+
+ref3ma gaat niet samen met ref3
+
+

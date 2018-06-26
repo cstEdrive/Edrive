@@ -1,0 +1,77 @@
+COIN implementation document for Turbo Pascal.
+                                 ============
+
+1. Files.
+   -----
+   README     - This file
+   U1.DOC     - Standard COIN documentation
+   U1.S       - Source of COIN in (compact) Turbo Pascal 3.0 (TP3) format
+   U1.TPU     - Turbo Pascal Unit U1 for Turbo Pascal 4.0 (TP4)
+   U1.U       - interface section of U1.TPU
+
+   DEMO.PAS   - Turbo Pascal source text of demonstration program
+   DEMO.EXE   - Code of demonstration program
+   DEMO.U1C   - Control file of demonstration program
+
+
+2. Dimensions.
+   ----------
+   File U1.S is pretty unreadable, but starts with a line which may be read
+   and modified easily. There are the constants
+    - u1mstr : maximum string length (see below). Default 127.
+               used for interactive I/O buffers and text-arguments
+    - u1kmax : size of COIN's integer buffer. Default 1000.
+               should be big enough to match with all commands (6 integers
+               each) plus all messages (3 integers each) plus overhead (5
+               integers)
+    - u1tmax : size of COIN's text buffer. Default 5000.
+               should be big enough to accomodate all texts from the control
+               file plus all text substitutes plus build-in messages (about
+               70 characters)
+   For TP3 you may adjust these values.
+   Routine u1ss tells how full the integer and the text buffer are in your
+   actual application.
+
+
+3. Types.
+   -----
+   Type u1str = string[u1mstr];  { used for all string arguments }
+        u1dp  = extended;        { double precision for TP4 }
+                real;            { for TP3 }
+
+   For TP3 both are found in the second line of U1.S.
+
+
+4. Including COIN in your program.
+   ------------------------------
+   For TP3: You should include the (possibly modified) source version U1.S in
+            your program. Include it as the first declarations. I/O-handling
+            {$I } must be switched off (default it's on); there is no need
+            for range checking {$R } (default it's off); stack checking {$K }
+            is up to you (default it's on).
+            So, your program should look like
+
+               program my_program;
+               {$I-}      { I/O-handling switched off                     }
+               {$I U1.S}  { Include source of COIN                        }
+               {$I+}      { I/O-handling switched on for your application }
+               const ...
+               type  ...
+               var   ...
+                  etc.
+
+   For TP4: When you only have the unit (U1.TPU), you cannot change above
+            constants and types. The source of the unit is file U1.PAS and
+            may be present. After adaptation, the unit may be build again.
+            There is no need for any checking; I/O-checking should be off to
+            allow COIN to recover internally.
+            Your program should look like:
+
+               program my_program;
+               uses u1;
+                  etc.
+
+   Remark: COIN introduces routines and global variables. All names start
+           with u1. When you avoid names starting with u1, there will be no
+           conflicts.
+

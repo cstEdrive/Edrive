@@ -1,0 +1,130 @@
+/* module input/output structure config for SOEM Master 
+// (c) 2008 R.Solberg IME Technologies
+// (c) 2010, M.J.C. Ronde, Eindhoven University of Technology
+//     E-box functionality added
+*/
+/*EL1xxx------------------------------*/
+typedef struct PACKED
+{
+	uint8	   inbits;
+} in_EL1008t;	
+
+typedef struct PACKED
+{
+	uint8	   inbits;
+} in_EL1014t;	
+
+typedef struct PACKED
+{
+	uint8	   inbits;
+} in_EL1018t;	
+
+
+/*EL2xxx------------------------------*/
+typedef struct PACKED
+{
+	uint8	   outbits;
+} out_EL2004t;	
+
+typedef struct PACKED
+{
+	uint8	   outbits;
+} out_EL2008t;	
+
+
+/*EL3xxx------------------------------*/
+typedef struct PACKED
+{
+	uint8	   status1;
+	int16	   invalue1;
+	uint8	   status2;
+	int16	   invalue2;
+} in_EL3102t;	
+
+
+typedef struct PACKED
+{
+	uint16	   status1;
+	int16	   invalue1;
+	uint16	   status2;
+	int16	   invalue2;
+	uint16	   status3;
+	int16	   invalue3;
+	uint16	   status4;
+	int16	   invalue4;
+} in_EL3104t;
+
+/*EL4xxx------------------------------*/
+typedef struct PACKED
+{
+	int16	   outvalue1;
+	int16	   outvalue2;
+} out_EL4132t;
+
+typedef struct PACKED
+{
+	int16	   outvalue1;
+	int16	   outvalue2;
+    int16	   outvalue3;
+    int16	   outvalue4;
+    int16	   outvalue5;
+    int16	   outvalue6;
+    int16	   outvalue7;
+    int16	   outvalue8;
+} out_EL4038t;
+
+/*EL5xxx------------------------------*/
+typedef struct PACKED
+{
+	uint8	   control;
+	int16	   outvalue;
+} out_EL5101t;	
+
+typedef struct PACKED
+{
+	uint8	   status;
+	int16	   invalue;
+	int16	   latch;
+} in_EL5101t;
+
+/* ----- E-box (EtherBox 2011) ----- */
+typedef struct PACKED
+{
+	uint8 	status;
+	uint8	counter;
+	uint8 	din;
+	int32	ain[2];
+	uint32 	tsain;
+	int32	enc[2]; /* channel 1 becomes timestamp of channel 0 if time stamp mode is enabled over CoE */
+} in_Eboxt;
+
+typedef struct PACKED
+{
+	uint8	control;
+	uint8 	dout;
+	int16 	aout[2];
+        uint16  pwmout[2];
+} out_Eboxt;
+
+/*-------------------------------------------------------
+ * create array of MAX_NUMBER_OF_SLAVES pointers to I/O structures for all known devices */	
+
+in_EL1008t		*in_EL1008_[MAX_NUMBER_OF_SLAVES];
+in_EL1014t		*in_EL1014_[MAX_NUMBER_OF_SLAVES];
+in_EL1018t		*in_EL1018_[MAX_NUMBER_OF_SLAVES];
+
+out_EL2004t		*out_EL2004_[MAX_NUMBER_OF_SLAVES];
+out_EL2008t		*out_EL2008_[MAX_NUMBER_OF_SLAVES];
+
+in_EL3102t		*in_EL3102_[MAX_NUMBER_OF_SLAVES];
+in_EL3104t		*in_EL3104_[MAX_NUMBER_OF_SLAVES];
+
+out_EL4038t		*out_EL4038_[MAX_NUMBER_OF_SLAVES];
+out_EL4132t		*out_EL4132_[MAX_NUMBER_OF_SLAVES];
+
+out_EL5101t		*out_EL5101_[MAX_NUMBER_OF_SLAVES];
+in_EL5101t		*in_EL5101_[MAX_NUMBER_OF_SLAVES];
+
+out_Eboxt	        *out_Ebox_[MAX_NUMBER_OF_SLAVES];
+in_Eboxt	        *in_Ebox_[MAX_NUMBER_OF_SLAVES];
+

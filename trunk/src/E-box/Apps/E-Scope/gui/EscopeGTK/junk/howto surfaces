@@ -1,0 +1,59 @@
+initialise:
+	create AXIS_LABELS
+	create TICKS_GRID
+	create DATA
+	create TOTAL =
+		paste AXIS_LABELS
+		paste TICKS_GRID
+		paste DATA
+
+event: new data
+	check ticks
+	if not ok
+		create TICKS_GRID
+	end
+	paste TOTAL
+			
+event: zoom
+	disable event: new data	
+	paste total
+	draw box
+
+event: pointer
+	disable event: new data
+	paste total
+
+event: resize
+	create AXIS_LABELS
+	create TICKS_GRID
+	create DATA
+	create TOTAL
+	paste TOTAL
+
+create AXIS_LABELS(width,height,title,xlabel,ylabel)
+	return
+
+create TICKS_GRID(width,height,data)
+	return ticks
+
+create TICKS_GRID(width,height,data)
+	return
+
+create TOTAL(width,height)
+	paste AXIS_LABELS
+	paste TICKS_GRID
+	paste DATA
+
+gtk_graph_set_title
+gtk_graph_get_title
+gtk_graph_set_xlabel
+gtk_graph_get_xlabel
+gtk_graph_set_ylabel
+gtk_graph_plot
+gtk_graph_start_zooming
+gtk_graph_stop_zooming
+gtk_graph_start_pointer
+gtk_graph_stop_pointer
+
+
+

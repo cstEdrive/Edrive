@@ -1,0 +1,51 @@
+#!/bin/bash
+# Shell script version to build E-scope
+
+ROOT_UID=0     # Only users with $UID 0 have root privileges.
+E_NOTROOT=87   # Non-root exit error.
+
+
+# Script must be run as root, of course.
+if [ "$UID" -ne "$ROOT_UID" ]
+then
+  echo "Must be root to run this script."
+  exit $E_NOTROOT
+fi 
+
+cd incomm/
+chmod a+x buildlib
+./buildlib
+cd ..
+
+cd div/
+chmod a+x buildlib
+./buildlib
+cd ..
+
+cd remez/
+chmod a+x buildlib
+./buildlib
+cd ..
+
+cd fir/
+chmod a+x buildlib
+./buildlib
+cd ..
+
+cd fungen/
+chmod a+x buildlib
+./buildlib
+cd ..
+
+cd engine/
+chmod a+x buildlib
+chmod a+x buildeseng
+./buildlib
+./buildeseng
+cd ..
+
+cd gui/EscopeGTK/
+chmod a+x Escope_build
+chmod a+x Escope_run
+./Escope_build
+cd ..

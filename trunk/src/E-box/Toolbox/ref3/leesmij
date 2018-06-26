@@ -1,0 +1,5 @@
+De mexglx-file ref3.mexglx staat in /usr/local/matlab6p1/toolbox/local
+De c-files ref3.c voor rtw staat in /usr/local/matlab6p1/rtw/c/src
+De ref3 files staan in /usr/local/matlab6p1/toolbox/ref3
+'ref3' toegevoegd via addpath in /usr/local/matlab6p1/toolbox/local/matlabrc.m
+

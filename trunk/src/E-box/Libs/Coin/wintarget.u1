@@ -1,0 +1,61 @@
+
+Warn RvdM
+   0 RTA
+  10  G+O
+  20  H+ALT
+  30  T+IME
+
+   1Title
+   2Number of values to be generated
+   3Number of values to skip each time
+   4Number of histogram intervals
+  10Generating
+  11~n~1~n~2 values, skipping each time ~3~n~4 histogram ~
+    intervals
+  12~2 values, mean=~3, std deviation= ~4
+  13   Interval     count  from total of ~2 values for ~1
+  20Lesson number
+  21   next are dummy messages for the teach system
+  22
+  23
+  24
+  25
+  26
+  27
+  28
+  29
+  30
+  31
+  32
+
+<m 31
+
+11.Epilog.
+   ------
+
+   That was all ....
+   When you want to see some lessons again, use command TL
+
+<c 0
+
+RTA.
+
+This program controls the wintarget real-time application.
+You can start (GO) and stop (HALT) the application and
+also view some timing statistics (TIME).
+
+<c 10  GO
+
+GO will start the rta.
+
+<c 20  HALT
+
+HALT will stop the rta.
+
+>c 30  TIME
+
+TIME will show some timimg statistics.
+
+<c 99  QUIT
+
+QUIT will stop coin.

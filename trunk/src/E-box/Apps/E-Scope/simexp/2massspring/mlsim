@@ -1,0 +1,6 @@
+#/bin/sh
+sudo cp libtdqad_sim_preempt.so.1.0 /usr/lib/.
+ml
+
+
+

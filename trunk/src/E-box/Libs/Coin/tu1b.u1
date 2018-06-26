@@ -1,0 +1,50 @@
+
+Program aborted. Warn JosB
+   0 TEST
+   1  DU+MP
+   2  SB-SET BOUNDS
+   3  B+OOLEAN
+   4  I+NTEGER
+   5  D+OUBLE
+   6  T+EXT
+   7  S+HOW
+   8  A+BORT
+   9  Q+UIT
+
+   1Low integer
+   2High integer
+   3Low double
+   4High double
+   9How to bound (-1=not, 0=both, 1=left, 2=right)
+  11boolean
+  12integer
+  15double
+  14text
+  99The integer bounds are ~1 to ~2~nThe double bounds are ~5 and ~6~n~
+    The boolean is ~7~nThe text follows two times on separate lines~n~
+    ~8~n~8
+
+<c0
+
+Main help
+
+<c 3
+
+Help for command BOOLEAN
+
+>
+
+And more ...
+
+<m 3
+
+Help for message 3 (Low real)
+
+<c 32
+
+Help for nothing
+
+<c 2
+
+Help for SET_BOUNDS
+

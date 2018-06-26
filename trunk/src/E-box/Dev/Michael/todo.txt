@@ -1,0 +1,21 @@
+This document contains the todo-list of the total E/BOX project. The list is divided into categories for which part of the software needs to be fixed. 
+
+Desired features are marked with a * in front
+High priority bugs are marked with a ! in front
+
+
+
+Todo-list software:
+
+(QS) When engine fails or is shutdown by the user, the GUI crashes. (Added 2011-10-31 MR/JB)
+
+(Toolbox\Ref3) Before compiling, ref3 block need to be opened, i.e. there is no standard value (Added 2011-10-31 MR/JB)
+(Toolbox\Ref3) Close with x results in crash (Added 2011-10-31 MR/JB)
+(Toolbox\Ref3) If bad trajectory parameters are given, the number of iterations or time is to large, i.e. a restart is required. (Added 2011-10-31 MR/JB)
+
+(Target\ectarget) Fix RTMenu (Added 2011-10-31 MR/JB)
+
+* (QS) Visual feedback on GUI if signal is triggered (Added 2011-10-31 MR/JB)
+* (QS) Add trigger levels to plot (Added 2011-10-31 MR/JB)
+
+
