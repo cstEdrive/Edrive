@@ -2,6 +2,17 @@
 
 # INSTALL SCRIPT FOR EDRIVE
 
+USREXISTS=0
+for i in $(cut -d: -f1 /etc/passwd); do
+	if [ $i == 'ebox']; then
+		USREXISTS=1
+	fi
+done
+
+if [ USREXISTS == 0 ]; then
+	sudo adduser ebox
+fi
+
 sudo apt-get update -qq
 sudo apt-get install -yy htop gdebi synaptic grsync bleachbit gufw
 
