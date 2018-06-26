@@ -17,7 +17,7 @@ fi
 sudo apt-get update -qq
 sudo apt-get install -yy htop gdebi synaptic grsync bleachbit gufw
 
-sudo apt-get install -yy 	libpq-dev \
+sudo apt-get install -yy libpq-dev \
 							net-tools \
 							software-properties-common \
 							git \
@@ -38,15 +38,7 @@ sudo apt-get install -yy 	libpq-dev \
 
 
 chown -R root:root /home/ebox/Edrive
-
 chmod -R 755 /home/ebox/Edrive
-
-
-
-
-banner "INSTALLATION COMPLETE"
-
-
 
 
 echo "Modifications to be made manually"
