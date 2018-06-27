@@ -2,4 +2,4 @@
 
 #gcc -o geteth geteth.c -lec -lc
 
-g++ -o geteth geteth.cpp -lec -lc
+g++ geteth.cpp -o geteth
