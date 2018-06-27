@@ -10,8 +10,6 @@ int main(void)
 {
     int iret;
     
-    int status = system("ifconfig");
-
     if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
         ec_stop();
         printf("\n\nEhtercat stack connected to eth2 ...\n");
