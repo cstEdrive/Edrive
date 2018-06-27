@@ -77,6 +77,7 @@ cd $SRC_DIR/Scripts/
 ./buildgeteth
 
 cp geteth.o /usr/bin/geteth.o
+rm /usr/bin/geteth
 ln -s $SRC_DIR/Scripts/geteth.sh /usr/bin/geteth
 
 
