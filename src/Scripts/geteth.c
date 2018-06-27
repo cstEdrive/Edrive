@@ -12,8 +12,6 @@ int main(void)
     
     int status = system("ifconfig");
 
-    printf("\n\n ")
-
     if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
         ec_stop();
         printf("\n\nEhtercat stack connected to eth2 ...\n");
