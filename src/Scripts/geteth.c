@@ -6,9 +6,7 @@
 
 #define SHELLSCRIPT "\
 #/bin/bash \n\
-echo \"hello\" \n\
-echo \"how are you\" \n\
-echo \"today\" \n\
+ifconfig -a | sed 's/[ \t].*//;/^$/d'
 "
 
 /* link_id and chan_id start at 0 */
