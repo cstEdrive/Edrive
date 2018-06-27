@@ -52,7 +52,7 @@ chmod -R 755 /home/ebox/Edrive
 mkdir /usr/src/soem
 
 CURRENT_DIR=$(pwd)
-EBOX_DIR=$(pwd)/trunk/src/E-box
+EBOX_DIR=$(pwd)/src/E-box
 
 cd $EBOX_DIR/Libs/Timer_posix_AK/
 ./buildlib
@@ -81,7 +81,7 @@ ln -s $EBOX_DIR/Scripts/geteth /usr/bin/geteth
 
 echo "Modifications to be made manually"
 
-echo "1. Within /home/ebox/svn/trunk/src/E-box/Targets/ectarget/ec_main.c"
+echo "1. Within /home/ebox/svn/src/E-box/Targets/ectarget/ec_main.c"
 
 echo "   change line 560 to:"
 
