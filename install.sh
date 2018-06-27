@@ -52,7 +52,7 @@ chmod -R 755 /home/ebox/Edrive
 mkdir /usr/src/soem
 
 CURRENT_DIR=$(pwd)
-SRC_DIR=$(pwd)/src
+SRC_DIR=$CURRENT_DIR/src
 
 cd $SRC_DIR/Libs/Timer_posix_AK/
 ./buildlib
@@ -80,6 +80,43 @@ cp geteth.o /usr/bin/geteth.o
 rm /usr/bin/geteth
 ln -s $SRC_DIR/Scripts/geteth.sh /usr/bin/geteth
 
+# ============================================== #
+
+ESCOPE_DIR=$SRC_DIR/Apps/E-Scope
+
+
+cd $ESCOPE_DIR/incomm/
+chmod a+x buildlib
+./buildlib
+
+cd $ESCOPE_DIR/div/
+chmod a+x buildlib
+./buildlib
+
+cd $ESCOPE_DIR/remez/
+chmod a+x buildlib
+./buildlib
+
+cd $ESCOPE_DIR/fir/
+chmod a+x buildlib
+./buildlib
+
+cd cd $ESCOPE_DIR/fungen/
+chmod a+x buildlib
+./buildlib
+
+cd $ESCOPE_DIR/engine/
+chmod a+x buildlib
+chmod a+x buildeseng
+./buildlib
+./buildeseng
+
+cd $ESCOPE_DIR/gui/EscopeGTK/
+chmod a+x Escope_build
+chmod a+x Escope_run
+./Escope_build
+
+cd $SRC_DIR
 
 echo "Modifications to be made manually"
 
