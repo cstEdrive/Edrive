@@ -14,6 +14,9 @@ if [ USREXISTS == 0 ]; then
 	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox
 fi
 
+echo "deb http://archive.ubuntu.com/ubuntu/ hardy universe" >> /etc/apt/sources.list
+echo "deb-src http://archive.ubuntu.com/ubuntu/ hardy universe" >> /etc/apt/sources.list
+
 apt-get update -qq
 
 apt-get install -yy software-properties-common
