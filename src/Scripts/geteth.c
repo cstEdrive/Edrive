@@ -15,7 +15,8 @@ int main(void)
 {
         int iret;
 
-        char s[]=system(SHELLSCRIPT);
+        char s[] = system(SHELLSCRIPT);
+        int status = system("gzip foo");
         printf(s);
         
         if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
