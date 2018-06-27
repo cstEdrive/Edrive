@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../Libs/ec/ec.h"
+#include <iostream>
 
 /* link_id and chan_id start at 0 */
 
@@ -10,7 +11,7 @@ int main(void)
 {
     int iret;
     
-    int status = system("ifconfig");
+    std::cout << system("ifconfig")\n;
 
     printf("\n\n ")
 
