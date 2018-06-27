@@ -52,31 +52,31 @@ chmod -R 755 /home/ebox/Edrive
 mkdir /usr/src/soem
 
 CURRENT_DIR=$(pwd)
-EBOX_DIR=$(pwd)/src/E-box
+SRC_DIR=$(pwd)/src
 
-cd $EBOX_DIR/Libs/Timer_posix_AK/
+cd $SRC_DIR/Libs/Timer_posix_AK/
 ./buildlib
 
-cd $EBOX_DIR/Libs/soem
+cd $SRC_DIR/Libs/soem
 cp -Rf * /usr/src/soem/
 cd /usr/src/soem
 make -s clean
 make -s all
 
-cd $EBOX_DIR/Libs/soem
+cd $SRC_DIR/Libs/soem
 make -s clean
 make -s all
 
-cd $EBOX_DIR/Libs/ec
+cd $SRC_DIR/Libs/ec
 ./buildlib
 
-cd $EBOX_DIR/Libs/Coin
+cd $SRC_DIR/Libs/Coin
 ./buildlib
 
-cd $EBOX_DIR/Scripts/
+cd $SRC_DIR/Scripts/
 ./buildgeteth
 
-ln -s $EBOX_DIR/Scripts/geteth /usr/bin/geteth
+ln -s $SRC_DIR/Scripts/geteth /usr/bin/geteth
 
 
 echo "Modifications to be made manually"
