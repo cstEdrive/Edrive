@@ -18,9 +18,8 @@ int main(int argc, char **argv)
 
         int i;
 
-        for (i=1; i <argc; i++) printf("%s",argv[i]);
+        for (i=1; i < argc; i++) printf("%s",argv[i]);
 
-        }
         
         if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
             ec_stop();
