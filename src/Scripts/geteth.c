@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../Libs/ec/ec.h"
-
+#include <iostream>
+using namespace std;
 #define SHELLSCRIPT "\
 #/bin/bash \n\
 ifconfig -a | sed \'s/[ \\t].*//;/^$/d\' \n\
@@ -15,9 +16,8 @@ int main(void)
 {
         int iret;
 
-        // char s[] = system(SHELLSCRIPT);
-        int status = system("gzip foo");
-        printf(s);
+        cout << "You have entered ";
+
         
         if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
             ec_stop();
