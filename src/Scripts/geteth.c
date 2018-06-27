@@ -6,7 +6,7 @@
 
 #define SHELLSCRIPT "\
 #/bin/bash \n\
-ifconfig -a | sed \'s/[ \\t].*//;/\^$/d\' \n\
+ifconfig -a | sed \'s/[ \\t].*//;/^$/d\' \n\
 "
 
 /* link_id and chan_id start at 0 */
