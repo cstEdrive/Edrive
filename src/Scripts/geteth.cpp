@@ -11,9 +11,7 @@ int main(void)
 {
     int iret;
     
-    std::cout << system("ifconfig")\n;
-
-    printf("\n\n ")
+    std::cout << system("ifconfig");
 
     if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
         ec_stop();
