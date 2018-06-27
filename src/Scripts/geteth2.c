@@ -12,38 +12,46 @@ ifconfig -a | sed \'s/[ \\t].*//;/^$/d\' \n\
 
 int main(int argc, char **argv)
 {
-        int iret;
+    int iret;
 
-        printf("%d\n",argc);
+    printf("%d\n",argc);
 
-        int i;
+    int i;
 
-        for (i=1; i < argc; i++) printf("%s\n",argv[i]);
-
-        
-        if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
+    for (i=1; i < argc; i++)
+    {
+        if ( (iret=ec_start(argv[i]))==EC_SUCCESS ) {
             ec_stop();
-            printf("\n\nEhtercat stack connected to eth2 ...\n");
+            printf("\n\nEhtercat stack connected to %s ...\n", argv[i]);
             /*printf("\n\nEtherCAT stack connected to eth2, run changeeth(2) in matlab\n");*/
             return 2;
         }
-
-        if ( (iret=ec_start("eth1"))==EC_SUCCESS ) {
-            ec_stop();
-            printf("\n\nEhtercat stack connected to eth1 ...\n");
-            /*printf("\n\nEtherCAT stack connected to eth1, run changeeth(1) in matlab\n");*/
-            return 1;
-        }
-        
-        if ( (iret=ec_start("eth0"))==EC_SUCCESS ) {
-            ec_stop();
-            printf("\n\nEhtercat stack connected to eth0 ...\n");
-            /*printf("\n\nEtherCAT stack connected to eth0, run changeeth(0) in matlab\n");*/
-        return 0;
-        }
+        // printf("%s\n",argv[i]);
+    }
     
- 
-        printf("\n\nNo EtherCAT stack found, connect EtherCAT to pc and run as root\n");
-        return -1;
+    // if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
+    //     ec_stop();
+    //     printf("\n\nEhtercat stack connected to eth2 ...\n");
+    //     /*printf("\n\nEtherCAT stack connected to eth2, run changeeth(2) in matlab\n");*/
+    //     return 2;
+    // }
+
+    // if ( (iret=ec_start("eth1"))==EC_SUCCESS ) {
+    //     ec_stop();
+    //     printf("\n\nEhtercat stack connected to eth1 ...\n");
+    //     /*printf("\n\nEtherCAT stack connected to eth1, run changeeth(1) in matlab\n");*/
+    //     return 1;
+    // }
+    
+    // if ( (iret=ec_start("eth0"))==EC_SUCCESS ) {
+    //     ec_stop();
+    //     printf("\n\nEhtercat stack connected to eth0 ...\n");
+    //     /*printf("\n\nEtherCAT stack connected to eth0, run changeeth(0) in matlab\n");*/
+    // return 0;
+    // }
+
+
+    printf("\n\nNo EtherCAT stack found, connect EtherCAT to pc and run as root\n");
+    return -1;
         
 }
