@@ -10,9 +10,11 @@ ifconfig -a | sed \'s/[ \\t].*//;/^$/d\' \n\
 
 /* link_id and chan_id start at 0 */
 
-int main(void)
+int main(int argc, char **argv)
 {
         int iret;
+
+        printf(argc);
         
         if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
             ec_stop();
