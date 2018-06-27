@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 {
         int iret;
 
-        printf(argc);
+        printf("%d",argc);
         
         if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
             ec_stop();
