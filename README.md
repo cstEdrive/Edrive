@@ -8,7 +8,7 @@ Installation has been tested on:
 
 with Matlab 2018a
 
-Note that different versions of Matlab require different versions of gcc and g++. The compiler that is used for Matlab 2018a is gcc-6.3.0 and g++-6.3.0. Check the following site if you choose a different version of Matlab: {https://nl.mathworks.com/support/compilers.html]
+Note that different versions of Matlab require different versions of gcc and g++. The compiler that is used for Matlab 2018a is gcc-6.3.0 and g++-6.3.0. Check the following site if you choose a different version of Matlab: [https://nl.mathworks.com/support/sysreq/previous_releases.html]
 ## Installation
 Make sure to be super user for the installation.
 1. Install git
