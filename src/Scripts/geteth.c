@@ -14,8 +14,10 @@ ifconfig -a | sed \'s/[ \\t].*//;/^$/d\' \n\
 int main(void)
 {
         int iret;
-       
-        system(SHELLSCRIPT);
+
+        char s[]=system(SHELLSCRIPT);
+        printf(s);
+        
         if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
             ec_stop();
             printf("\n\nEhtercat stack connected to eth2 ...\n");
