@@ -120,7 +120,7 @@ echo '=============='
 
 echo "fungen"
 echo '++++++++++++++'
-cd cd $ESCOPE_DIR/fungen/
+cd $ESCOPE_DIR/fungen/
 chmod a+x buildlib
 ./buildlib
 echo '=============='
