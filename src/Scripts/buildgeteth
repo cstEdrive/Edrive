@@ -1,5 +1,5 @@
 #/bin/bash
 
-#gcc -o geteth geteth.c -lec -lc
+gcc -o geteth geteth.c -lec -lc
 
-g++ geteth.cpp -o geteth
+#g++ geteth.cpp -o geteth
