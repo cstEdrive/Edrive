@@ -82,6 +82,8 @@ ln -s $SRC_DIR/Scripts/geteth.sh /usr/bin/geteth
 
 # ============================================== #
 
+echo '=============='
+
 ESCOPE_DIR=$SRC_DIR/Apps/E-Scope
 
 
