@@ -17,14 +17,15 @@ int main(int argc, char **argv)
 
     for (i=1; i < argc; i++)
     {
-        if ( (iret=ec_start(argv[i]))==EC_SUCCESS ) {
+        if ( (iret=ec_start(argv[i]))==EC_SUCCESS ) 
+        {
             ec_stop();
             printf("\n\nEhtercat stack connected to %s ...\n", argv[i]);
             /*printf("\n\nEtherCAT stack connected to eth2, run changeeth(2) in matlab\n");*/
             return 0;
         }
     }
-    
+
     printf("\n\nNo EtherCAT stack found, connect EtherCAT to pc and run as root\n");
     return -1;
     
@@ -47,7 +48,7 @@ int main(int argc, char **argv)
     //     printf("\n\nEhtercat stack connected to eth0 ...\n");
     //     /*printf("\n\nEtherCAT stack connected to eth0, run changeeth(0) in matlab\n");*/
     // return 0;
-    }
+    // }
 
         
 }
