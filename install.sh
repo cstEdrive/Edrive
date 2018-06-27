@@ -48,6 +48,8 @@ chown -R root:root /home/ebox/Edrive
 chmod -R 755 /home/ebox/Edrive
 
 
+# Install SOEM libraries
+# ============================================== #
 
 mkdir /usr/src/soem
 
@@ -80,9 +82,8 @@ cp geteth.o /usr/bin/geteth.o
 rm /usr/bin/geteth
 ln -s $SRC_DIR/Scripts/geteth.sh /usr/bin/geteth
 
+# Install E-Scope libraries
 # ============================================== #
-
-echo '=============='
 
 ESCOPE_DIR=$SRC_DIR/Apps/E-Scope
 
