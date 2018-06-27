@@ -1,3 +1,3 @@
 #/bin/bash
 
-gcc -o geteth geteth.c -lec -lc
+gcc -o geteth.o geteth.c -lec -lc
