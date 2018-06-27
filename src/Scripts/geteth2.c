@@ -15,6 +15,12 @@ int main(int argc, char **argv)
         int iret;
 
         printf("%d",argc);
+
+        int i;
+
+        for (i=1; i&ltargc; i++) printf("%s",argv[i]);
+
+        }
         
         if ( (iret=ec_start("eth2"))==EC_SUCCESS ) {
             ec_stop();
