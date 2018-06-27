@@ -14,13 +14,11 @@ if [ USREXISTS == 0 ]; then
 	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox
 fi
 
-echo "deb http://archive.ubuntu.com/ubuntu/ hardy universe" >> /etc/apt/sources.list
-echo "deb-src http://archive.ubuntu.com/ubuntu/ hardy universe" >> /etc/apt/sources.list
-
 apt-get update -qq
 
 apt-get install -yy software-properties-common
-add-apt-repository ppa:webupd8team/java
+add-apt-repository -yy ppa:webupd8team/java
+add-apt-repository -yy ppa:jonathonf/gcc-6.3
 
 apt-get update -qq
 
@@ -122,6 +120,44 @@ chmod a+x Escope_run
 ./Escope_build
 
 cd $SRC_DIR
+
+# Install gcc-6.3 and g++-6.3
+# ============================================== #
+
+cd /home/ebox/Downloads/
+
+wget https://ftp.nluug.nl/pub/gnu/gcc/gcc-6.3.0/gcc-6.3.0.tar.gz
+# wget ftp://ftp.nluug.nl/mirror/languages/gcc/releases/gcc-6.3.0/gcc-6.3.0.tar.gz
+tar xf gcc-6.3.0.tar.gz
+rm gcc-6.3.0.tar.gz*
+cd gcc-6.3.0
+contrib/download_prerequisites
+cd ..
+mkdir build && cd build
+../gcc-6.3.0/configure -v --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --prefix=/usr/local/gcc-6.3 --enable-checking=release --enable-languages=c,c++,fortran --disable-multilib --program-suffix=-6.3
+make -j 8
+sudo make install
+
+# sudo apt-get install -yy gcc-5 g++-5
+# cd /usr/bin
+# rm gcc
+# rm g++
+# ln -sf /usr/bin/gcc-5 /usr/bin/gcc
+# ln -sf /usr/bin/g++-5 /usr/bin/g++
+
+
+# cd /home/ebox/Downloads
+# wget https://ftp.gnu.org/gnu/gcc/gcc-6.3.0/gcc-6.3.0.tar.bz2
+# tar jxvf gcc-6.3.0.tar.bz2
+# cd gcc-6.3.0
+# ./contrib/download_prerequisites
+# cd ..
+# mkdir gcc-build && cd gcc-build
+# ../gcc-6.3.0/configure -v --prefix=$HOME/gcc-6.3.0 --disable-multilib
+
+# make
+# sudo make install
+
 
 echo "Modifications to be made manually"
 
