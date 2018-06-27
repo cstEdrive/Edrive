@@ -76,7 +76,8 @@ cd $SRC_DIR/Libs/Coin
 cd $SRC_DIR/Scripts/
 ./buildgeteth
 
-ln -s $SRC_DIR/Scripts/geteth /usr/bin/geteth
+cp geteth.o /usr/bin/geteth.o
+ln -s $SRC_DIR/Scripts/geteth.sh /usr/bin/geteth
 
 
 echo "Modifications to be made manually"
