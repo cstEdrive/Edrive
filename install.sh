@@ -86,58 +86,32 @@ echo '=============='
 
 ESCOPE_DIR=$SRC_DIR/Apps/E-Scope
 
-echo "incomm"
-echo '++++++++++++++'
 cd $ESCOPE_DIR/incomm/
 chmod a+x buildlib
 ./buildlib
-echo '=============='
 
-
-echo "div"
-echo '++++++++++++++'
 cd $ESCOPE_DIR/div/
 chmod a+x buildlib
 ./buildlib
-echo '=============='
 
-
-echo "remez"
-echo '++++++++++++++'
 cd $ESCOPE_DIR/remez/
 chmod a+x buildlib
 ./buildlib
-echo '=============='
 
-
-echo "fir"
-echo '++++++++++++++'
 cd $ESCOPE_DIR/fir/
 chmod a+x buildlib
 ./buildlib
-echo '=============='
 
-
-echo "fungen"
-echo '++++++++++++++'
 cd $ESCOPE_DIR/fungen/
 chmod a+x buildlib
 ./buildlib
-echo '=============='
 
-
-echo "engine"
-echo '++++++++++++++'
 cd $ESCOPE_DIR/engine/
 chmod a+x buildlib
 chmod a+x buildeseng
 ./buildlib
 ./buildeseng
-echo '=============='
 
-
-echo "EscopeGTK"
-echo '++++++++++++++'
 cd $ESCOPE_DIR/gui/EscopeGTK/
 chmod a+x Escope_build
 chmod a+x Escope_run
