@@ -85,6 +85,10 @@ netif = ['eth',num2str(netif)];
 % system('/home/ebox/svn/trunk/src/E-box/Apps/E-Scope/engine/eseng &');
 
 eth_port = system('geteth');
+[status, geteth_output] = system('geteth')
+eth_port = regexp(geteth_output, 'Ethercat stack connected to ', 'split'){2}(1:end-1)
+eth_port
+
 geteth_path = sprintf('/home/ebox/Edrive/src/E-box/Apps/E-Scope/engine/eseng %d %d %d eth%d &',maxfreq, frame_length, dac_ndown, eth_port);
 system(geteth_path);
 
