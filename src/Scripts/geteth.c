@@ -17,7 +17,7 @@ const char * main(int argc, char **argv)
         {
             ec_stop();
             printf("\n\nEhtercat stack connected to %s ...\n", argv[i]);
-            return printf("%s", month);
+            return printf("%s", argv[i]);
         }
     }
 
