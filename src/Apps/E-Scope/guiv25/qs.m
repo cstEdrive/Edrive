@@ -29,22 +29,6 @@ if ~exist(sim_ind,'file')==1
     system('/usr/local/simexp/experiment/mlsim >/dev/null 2>&1');
 end
 
-
-%% Check if eth port is named eth0, eth1 or eth2, otherwise rename to eth0
-%   reboot is mandatory if changes are made.
-
-eth_port_check=system('/home/ebox/svn/trunk/src/E-box/eth_port/eth_check.sh');
-
-
-% if changes are made warn that reboot is mandatory & quit
-if eth_port_check==1
-    %recompile experiment
-    system('/usr/local/simexp/experiment/mlsim >/dev/null 2>&1');
-    fprintf('YOU NEED TO RESTART YOUR COMPUTER NOW IN ORDER TO CONTINUE!\n')
-    error('PLEASE RESTART YOUR COMPUTER NOW! If you do not restart your computer, you will not be able to access the EBOX')
-end
-
-
 %%
 clear mex;
 
