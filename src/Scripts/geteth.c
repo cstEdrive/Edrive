@@ -6,7 +6,7 @@
 #include "../Libs/ec/ec.h"
 
 
-int main(int argc, char **argv)
+const char * main(int argc, char **argv)
 {
     int iret;
     int i;
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
         {
             ec_stop();
             printf("\n\nEhtercat stack connected to %s ...\n", argv[i]);
-            return 0;
+            return argv[i];
         }
     }
 
