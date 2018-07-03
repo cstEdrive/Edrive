@@ -85,7 +85,7 @@ netif = ['eth',num2str(netif)];
 % system('/home/ebox/svn/trunk/src/E-box/Apps/E-Scope/engine/eseng &');
 
 eth_port = system('geteth');
-geteth_path = sprintf('/home/ebox/svn/trunk/src/E-box/Apps/E-Scope/engine/eseng %d %d %d eth%d &',maxfreq, frame_length, dac_ndown, eth_port);
+geteth_path = sprintf('/home/ebox/Edrive/src/E-box/Apps/E-Scope/engine/eseng %d %d %d eth%d &',maxfreq, frame_length, dac_ndown, eth_port);
 system(geteth_path);
 
 % wait some time
