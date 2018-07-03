@@ -87,13 +87,13 @@ netif = ['eth',num2str(netif)];
 % eth_port = system('geteth');
 [status, geteth_output] = system('geteth');
 eth_port = regexp(geteth_output, 'Ethercat stack connected to ', 'split');
-eth_port = eth_port{2}(1:end-1)
+eth_port = eth_port{2}(1:end-1);
 
 geteth_path = sprintf('/home/ebox/Edrive/src/Apps/E-Scope/engine/eseng %d %d %d %s &',maxfreq, frame_length, dac_ndown, eth_port);
 system(geteth_path);
 
 % wait some time
-pause(5);
+pause(1);
 
 % start gui
 qadscope
