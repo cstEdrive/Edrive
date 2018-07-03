@@ -17,7 +17,7 @@ int main(int argc, char **argv)
         if ( (iret=ec_start(argv[i]))==EC_SUCCESS ) 
         {
             ec_stop();
-            printf("\n\nEthercat stack connected to %s ...\n", argv[i]);
+            printf("\n\nEthercat stack connected to %s\n", argv[i]);
             return 0;
         }
     }

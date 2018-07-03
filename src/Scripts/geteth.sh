@@ -1,9 +1,12 @@
 #!/bin/bash
 
-OUTPUT="$(/usr/bin/geteth.o `ifconfig -a | sed 's/[ \t].*//;/^$/d' | sed s/://g` )"
+OUTPUT="$(geteth `ifconfig -a | sed 's/[ \t].*//;/^$/d' | sed s/://g` )"
 
 echo "${OUTPUT}"
 
-# echo grep Ethercat $(OUTPUT)
+ETHERCAT=`geteth | grep -oP "Ethercat stack connected to \K(.+)"
+ # grep Ethercat $(OUTPUT)
+echo "${ETHERCAT}"
+
 
 
