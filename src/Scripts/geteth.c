@@ -22,5 +22,5 @@ const char * main(int argc, char **argv)
     }
 
     printf("\n\nNo EtherCAT stack found, connect EtherCAT to pc and run as root\n");
-    return -1;
+    return "error";
 }
