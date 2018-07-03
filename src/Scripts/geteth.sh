@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUTPUT="$(/usr/bin/geteth.o `ifconfig -a | sed 's/[ \t].*//;/^$/d' | sed s/://g` | grep Ethercat)"
+OUTPUT="$(/usr/bin/geteth.o `ifconfig -a | sed 's/[ \t].*//;/^$/d' | sed s/://g` )"
 
 echo "${OUTPUT}"
 
