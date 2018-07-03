@@ -4,6 +4,6 @@ OUTPUT="$(/usr/bin/geteth.o `ifconfig -a | sed 's/[ \t].*//;/^$/d' | sed s/://g`
 
 echo "${OUTPUT}"
 
-echo grep Ethercat $(OUTPUT)
+# echo grep Ethercat $(OUTPUT)
 
 
