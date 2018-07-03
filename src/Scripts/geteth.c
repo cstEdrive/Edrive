@@ -10,6 +10,7 @@ const char * main(int argc, char **argv)
 {
     int iret;
     int i;
+    char *eth_port = NULL;
 
     for (i=1; i < argc; i++)
     {
@@ -17,7 +18,8 @@ const char * main(int argc, char **argv)
         {
             ec_stop();
             printf("\n\nEhtercat stack connected to %s ...\n", argv[i]);
-            return printf("%s", argv[i]);
+            strcpy(eth_port, argv[i]);
+            return &eth_port;
         }
     }
 
