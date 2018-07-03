@@ -18,7 +18,6 @@ int main(int argc, char **argv)
         {
             ec_stop();
             printf("\n\nEthercat stack connected to %s ...\n", argv[i]);
-            strcpy(eth_port, argv[i]);
             return 0;
         }
     }
