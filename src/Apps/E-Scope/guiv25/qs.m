@@ -40,7 +40,7 @@ dac_ndown=0;
 netw_interface_name = regexp(geteth_output, 'Ethercat stack connected to ', 'split');
 netw_interface_name = netw_interface_name{2}(1:end-1);
 
-geteth_path = sprintf('/home/ebox/Edrive/src/Apps/E-Scope/engine/eseng %d %d %d %s &',maxfreq, frame_length, dac_ndown, netw_interface_name);
+geteth_path = sprintf('/home/edrive/ebox/src/Apps/E-Scope/engine/eseng %d %d %d %s &',maxfreq, frame_length, dac_ndown, netw_interface_name);
 system(geteth_path);
 
 % wait some time
