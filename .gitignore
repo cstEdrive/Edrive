@@ -1,2 +1,8 @@
 # ignore compiled C code
+
 *.o
+src/Libs/soem/ebox
+src/Libs/soem/eepromtool
+src/Libs/soem/red_test
+src/Libs/soem/simple_test
+src/Libs/soem/slaveinfo
