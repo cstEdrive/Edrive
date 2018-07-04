@@ -1,5 +1,5 @@
-% make_all_install
-% makefile which installs a complete package for EtherCAT and E/box
+% install_ebox.m
+% makefile that installs a complete package for EtherCAT and E/box
 % if desired the specific toolboxes and files for TU/e can be installed
 
 current_ebox_dir = pwd;
