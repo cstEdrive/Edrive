@@ -21,15 +21,18 @@ cd(current_ebox_dir)
 
 versioninfo = ver('matlab');
 
+% Install target
+cd Targets
+make;
+cd(current_ebox_dir)
+
+
 % Install Toolboxes
 cd Toolbox
 make
 cd(current_ebox_dir)
     
-% Install target
-cd Targets
-make;
-cd(current_ebox_dir)
+
 
 
 % %% >>>> NOTE: Matlab 2013b is installed in /usr/local/MATLAB/R2013b -> CHECK PATH line 52
