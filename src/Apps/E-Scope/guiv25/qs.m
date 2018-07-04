@@ -1,23 +1,11 @@
-function qs(varargin)
-
 % QS  QadScope experimentation software for use with TUeDACS/
-
 % QS  QadScope experimentation software for use with TUeDACS/1 QAD/AQI modules
-%
 % QS starts measuring with the default sampling rate of 4096 Hz.
-%
 % QS(MAXFREQ) starts with a sampling rate of MAXFREQ Hz.
-%
 % QS(MAXFREQ,DAC_NDOWN) starts with a sampling rate of MAXFREQ Hz and a
 % down-sampled D/A-rate of MAXFREQ/(1+DAC_NDOWN) Hz.
 
-%% LOG: 
-%17 February 2015 [MPlantinga]: added ethernet port renaming script
-%                               eth_check.sh
-%01 March 2015 [MPlantinga]: added script to check if qs engine is in
-%                            simulation mode. If this is the case change 
-%                            it to experiment (EBOX) mode
-
+function qs(varargin)
 
 %% Check if engine is in simulation mode, if so reset to experiment mode
 sim_ind='/home/edrive/ebox/src/E-box/Apps/sim_exp/sim_indicator';
