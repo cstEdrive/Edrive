@@ -4,14 +4,14 @@
 
 USREXISTS=0
 for i in $(cut -d: -f1 /etc/passwd); do
-	if [ $i == 'ebox' ]; then
+	if [ $i == 'edrive' ]; then
 		USREXISTS=1
 	fi;
 done
 
 if [ USREXISTS == 0 ]; then
-	sudo adduser ebox --home /home/ebox --disabled-password --gecos ''
-	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare ebox
+	sudo adduser edrive --home /home/edrive --disabled-password --gecos ''
+	sudo usermod -a -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare edrive
 fi
 
 apt-get update -qq
@@ -47,8 +47,8 @@ apt-get install -yy vim \
 
 
 
-chown -R root:root /home/ebox/Edrive
-chmod -R 755 /home/ebox/Edrive
+chown -R root:root /home/edrive/Edrive
+chmod -R 755 /home/edrive/Edrive
 
 
 # Install SOEM libraries
@@ -133,16 +133,6 @@ rm /usr/bin/g++
 
 ln -sf /usr/bin/gcc-4.9 /usr/bin/gcc
 ln -sf /usr/bin/g++-4.9 /usr/bin/g++
-
-
-
-echo "Modifications to be made manually"
-
-echo "1. Within /home/ebox/svn/src/E-box/Targets/ectarget/ec_main.c"
-
-echo "   change line 560 to:"
-
-echo "   /usr/local/MATLAB/R2015b/rtw/c/ectarget/ectarget.u1"
 
 
 
