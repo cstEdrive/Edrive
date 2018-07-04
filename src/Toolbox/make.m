@@ -1,8 +1,8 @@
 % make file to install toolboxes
 
-itb = input('Would you like to install the TU/e toolboxes? y/n [y]', 's')
+install_toolbox = input('Would you like to install the TU/e toolboxes? y/n [y]: ', 's');
 
-if strcmp(itb,'y') || strcmp(itb,'')
+if strcmp(install_toolbox,'y') || strcmp(install_toolbox,'')
     current_tbx_dir = pwd;
     tbxpath = toolboxdir('');
     
@@ -27,6 +27,6 @@ if strcmp(itb,'y') || strcmp(itb,'')
     
     savepath
     rehash toolboxcache
-elseif strcmp(itb,'n')
+elseif strcmp(install_toolbox,'n')
     disp('TU/e toolboxes not installed')
 end
