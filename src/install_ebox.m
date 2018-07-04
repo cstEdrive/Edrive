@@ -31,8 +31,8 @@ cd(current_ebox_dir)
 cd Toolbox
 make
 cd(current_ebox_dir)
-    
 
+disp("INSTALLATION COMPLETE")
 
 
 % %% >>>> NOTE: Matlab 2013b is installed in /usr/local/MATLAB/R2013b -> CHECK PATH line 52
