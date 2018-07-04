@@ -20,7 +20,7 @@ function qs(varargin)
 
 
 %% Check if engine is in simulation mode, if so reset to experiment mode
-sim_ind='/home/ebox/svn/trunk/src/E-box/Apps/sim_exp/sim_indicator';
+sim_ind='/home/edrive/ebox/src/E-box/Apps/sim_exp/sim_indicator';
 
 % chech if the simulation indicator file (sim_indicator) is present to see
 % if the engine has to be recompiled to experiment mode
