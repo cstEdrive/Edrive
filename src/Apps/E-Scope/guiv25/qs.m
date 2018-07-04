@@ -43,10 +43,5 @@ netw_interface_name = netw_interface_name{2}(1:end-1);
 geteth_path = sprintf('/home/edrive/ebox/src/Apps/E-Scope/engine/eseng %d %d %d %s &',maxfreq, frame_length, dac_ndown, netw_interface_name);
 system(geteth_path);
 
-% wait some time
-pause(1);
-
 % start gui
 qadscope
-
-pause(5)
