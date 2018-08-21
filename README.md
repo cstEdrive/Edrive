@@ -9,10 +9,10 @@ Installation has been tested on:
 Note that different versions of Matlab require different versions of gcc and g++. The compiler that is used for Matlab 2018a is gcc-4.9 and g++-4.9 Check the following site if you choose a different version of Matlab: https://nl.mathworks.com/support/sysreq/previous_releases.html
 
 
-# Create a Lubuntu USB drive
+# 1. Create a Lubuntu USB drive
 The following sections describes the steps to be followed.
 
-### 1. Create Live USB drive
+### 1.1 Create Live USB drive
 For this section, you need **1 USB drive** with at least **4GB** of memory. We will call this the *Live USB*.
 
 1. Download and install Unetbootin from [https://unetbootin.github.io/]
@@ -24,7 +24,7 @@ For this section, you need **1 USB drive** with at least **4GB** of memory. We w
 7. **IMPORTANT:** make sure the drive you selected is the correct USB drive, writing files to an incorrect USB drive or Hard Drive cannot be undone. Use applications, such as `Disk Utility` (Mac), `gparted` (Linux) or `EaseUS Partition Master` (Windows), to verify that you have selected the correct drive.
 8. If everything has been entered correctly in the previous steps, click `OK` to create the Live USB. This takes a couple of minutes.
 
-### 2. Install Lubuntu on USB drive
+### 1.2 Install Lubuntu on USB drive
 For this section, you need 2 USB drives:
 1. The Live USB of Section 1
 2. A USB drive with at least 16 GB of memory. We will call this the *Lubuntu USB*.
@@ -62,7 +62,7 @@ Install as follows:
     ```
 15. Click `Continue` and let the installation do its work.
 
-# 3. Macintosh Installation
+### 1.3 Macintosh Installation
 To be able to boot the Edrive from a Mac, the EFI partition has to be in HFS+ file format. For this section, you need 2 USB drives:
 1. The Live USB of Section 1
 2. The Lubuntu USB of Section 2.
@@ -160,7 +160,7 @@ Proceed as follows:
     ```
 24. Fix the default bootloader by booting Mac OS and then under `System Settings > Startup Disk` select the Mac OSX system.
 
-# 3. Install Ethercat Software
+# 2. Install Ethercat Software
 1. Install Git:
     ```
     sudo su
@@ -177,7 +177,7 @@ Proceed as follows:
     ./install.sh
     ```
 
-# 4 Install Matlab
+# 3. Install Matlab
 1. Go to `www.mathworks.com` and download the **Matlab 2017b** installer: [https://www.mathworks.com/downloads/web_downloads/download_release?release=R2017b]. Other versions are possible too, however the `gcc` and `g++` versions have to be modified accordingly. See also the installation script of the previous section `install.sh`. 
 2. Go to the location where you extracted the installer and install Matlab by typing 
     ```
@@ -194,14 +194,14 @@ Proceed as follows:
     - Control System Toolbox (used for Shapeit)
 4. When registering Matlab, make sure to enter `root` as username.
 
-# 5. Additional Settings
+# 4. Additional Settings
 1. Remove `System Program Problem Detected` popups. These popups allow you to send a crash report to the developers. Whenever a program crashes, a crash report is created and stored under `/var/crash/*.crash`. To remove the popup from appearing when a crash occurs, edit the `/etc/default/apport` file by setting modifying the `enabled` line as follows:
     ```
     enabled=0
     ```
 2. Change the copy-pasting shortcut keys in Matlab. Go to `Preferences > Keyboard > Shortcuts` and select `Windows Default Set` under `Active settings`.
 
-# 6. Errors
+# 5. Errors
 1. `Failed to load module: /usr/lib/x864_64 linux gnu/gio/modules/libgiolibproxy.so`
     This error occurs when the version of Java JRE that ships with MATLAB loads a library outside of MATLAB which in turn is incompatible with the version of `libstdc++.so.6` that ships with MATLAB.To resolve the issue, navigate to MATLAB R2017b installation location, i.e. `/usr/local/MATLAB`, and remove the `libstdc++.so.6` library file shipped with MATLAB R2017b, so that MATLAB will use the system version of that library:
 
