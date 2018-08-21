@@ -169,7 +169,7 @@ Proceed as follows:
 2. Clone the repository:
     ```
     cd /home/edrive
-    git clone https://github.com/cstEdrive/ebox.git
+    git clone https://github.com/robotics-tue/ebox.git
     ```
 3. Run the installation script
     ```
