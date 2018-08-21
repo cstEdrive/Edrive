@@ -52,14 +52,14 @@ Install as follows:
 12. Under `Device for boot loader installation:`, select the drive where you are going to install Lubuntu, e.g. `/dev/sdc` (NOT the partition, but the entire drive). Make sure you don't make any mistakes in this window, as this can destroy the OS and files on your computer.
 13. Click `Install Now` and make sure in the popup window everything is correct.
 14. In the `Who are you?` window, set the following values:
-    ---
+    ```
     Your name: `edrive`
     Your computer's name: `edrive`
     Pick a username: `edrive`
     Choose a password: `<your password>`
     Confirm your password: `<your password>`
     Select `Log in automatically`
-    ---
+    ```
 15. Click `Continue` and let the installation do its work.
 
 # 3. Macintosh Installation
